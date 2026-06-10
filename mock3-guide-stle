@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITS — Complete Topic Explanations | Teacher Education & Pedagogy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:       #0d1f2d;
+  --ink-mid:   #2e4a5a;
+  --ink-soft:  #5a7a8a;
+  --paper:     #fafcfe;
+  --rule:      #dce8ef;
+  --gold:      #b8922a;
+  --gold-lt:   #f5e6c0;
+  --teal:      #1b7a6e;
+  --teal-lt:   #e3f4f2;
+  --accent:    #0e4d6e;
+  --accent-lt: #e5f0f7;
+  --white:     #ffffff;
+  --red:       #b83232;
+  --red-lt:    #fdf0f0;
+  --green:     #1b6e3e;
+  --green-lt:  #e8f5ee;
+  --shadow:    0 2px 24px rgba(13,31,45,.09), 0 1px 4px rgba(13,31,45,.06);
+}
+
+html { font-size: 15px; scroll-behavior: smooth; }
+
+body {
+  background: #e8edf2;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── STICKY NAV ─────────────────────────────── */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.top-nav::-webkit-scrollbar { display: none; }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem 1rem .6rem 0;
+  border-right: 1px solid rgba(255,255,255,.12);
+  margin-right: .5rem;
+  flex-shrink: 0;
+}
+.nav-logo img {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: white;
+  object-fit: contain;
+  padding: 2px;
+}
+.nav-logo span {
+  font-family: 'Playfair Display', serif;
+  font-size: .85rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .65rem .85rem;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: inherit;
+}
+.nav-btn:hover, .nav-btn.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.nav-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── HERO ────────────────────────────────────── */
+.hero {
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 2rem 2.5rem;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 130% at 75% 50%, rgba(30,90,120,.4) 0%, transparent 65%),
+    repeating-linear-gradient(45deg, transparent, transparent 28px, rgba(255,255,255,.02) 28px, rgba(255,255,255,.02) 29px);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.hero-logo {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+  box-shadow: 0 0 0 3px rgba(184,146,42,.35), 0 6px 20px rgba(0,0,0,.35);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.hero-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+.hero-text {}
+.hero-eyebrow {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: .25rem .8rem;
+  border-radius: 2px;
+  margin-bottom: .65rem;
+}
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.hero-text p {
+  font-size: .85rem;
+  color: rgba(255,255,255,.55);
+  max-width: 560px;
+  line-height: 1.65;
+}
+.hero-stats {
+  display: flex;
+  gap: 1.8rem;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+}
+.hero-stat {}
+.hero-stat .hs-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.hero-stat .hs-label {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-top: .15rem;
+}
+.hero-rule {
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, #e0b84a 40%, transparent 100%);
+}
+
+/* ── LAYOUT ─────────────────────────────────── */
+.page-body {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+/* ── SIDEBAR ─────────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: 46px;
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.sb-head {
+  background: var(--ink);
+  padding: .75rem 1rem;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+.sb-section {
+  border-bottom: 1px solid var(--rule);
+}
+.sb-section:last-child { border-bottom: none; }
+.sb-section-title {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .6rem .9rem .4rem;
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.sb-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sb-link {
+  display: block;
+  padding: .3rem .9rem .3rem 1.8rem;
+  font-size: .74rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  line-height: 1.45;
+  transition: color .15s, background .15s;
+  border-left: 2px solid transparent;
+}
+.sb-link:hover {
+  color: var(--accent);
+  background: var(--accent-lt);
+}
+.sb-link.active {
+  color: var(--accent);
+  background: var(--accent-lt);
+  border-left-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── MAIN CONTENT ───────────────────────────── */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── SECTION BLOCK ──────────────────────────── */
+.sec-block {
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.sec-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.sec-header-icon {
+  width: 42px; height: 42px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.sec-header-icon svg { width: 20px; height: 20px; }
+.icon-blue  { background: var(--accent-lt); }
+.icon-blue svg  { fill: var(--accent); }
+.icon-teal  { background: var(--teal-lt); }
+.icon-teal svg  { fill: var(--teal); }
+.icon-gold  { background: var(--gold-lt); }
+.icon-gold svg  { fill: var(--gold); }
+.icon-green { background: var(--green-lt); }
+.icon-green svg { fill: var(--green); }
+.icon-red   { background: var(--red-lt); }
+.icon-red svg   { fill: var(--red); }
+
+.sec-header-text {}
+.sec-header-text .sec-eyebrow {
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: .15rem;
+}
+.eb-blue  { color: var(--accent); }
+.eb-teal  { color: var(--teal); }
+.eb-gold  { color: #7a5c0d; }
+.eb-green { color: var(--green); }
+.eb-red   { color: var(--red); }
+
+.sec-header-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.sec-header-text p {
+  font-size: .75rem;
+  color: var(--ink-soft);
+  margin-top: .2rem;
+}
+.sec-badge {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .25rem .8rem;
+  border-radius: 100px;
+}
+.sb-blue  { background: var(--accent-lt); color: var(--accent); }
+.sb-teal  { background: var(--teal-lt); color: var(--teal); }
+.sb-gold  { background: var(--gold-lt); color: #7a5c0d; }
+.sb-green { background: var(--green-lt); color: var(--green); }
+.sb-red   { background: var(--red-lt); color: var(--red); }
+
+/* ── TOPIC CARD ─────────────────────────────── */
+.topics-list {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.topic-card {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  margin-bottom: .85rem;
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.topic-card:last-child { margin-bottom: 0; }
+.topic-card:hover { box-shadow: 0 4px 16px rgba(13,31,45,.1); }
+
+.topic-head {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  padding: .8rem 1rem;
+  cursor: pointer;
+  background: var(--paper);
+  user-select: none;
+  transition: background .15s;
+}
+.topic-head:hover { background: #f0f5f9; }
+
+.topic-num {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 4px;
+  background: var(--ink);
+  color: white;
+  font-size: .7rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.topic-title {
+  flex: 1;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.topic-arrow {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .25s, background .2s;
+}
+.topic-arrow svg { width: 10px; height: 10px; fill: var(--ink-soft); }
+.topic-card.open .topic-arrow { transform: rotate(180deg); background: var(--accent-lt); }
+.topic-card.open .topic-arrow svg { fill: var(--accent); }
+
+.topic-body {
+  display: none;
+  padding: 1.1rem 1.2rem 1.2rem;
+  border-top: 1px solid var(--rule);
+  background: white;
+}
+.topic-card.open .topic-body { display: block; }
+
+/* Content inside topic body */
+.topic-body p {
+  font-size: .84rem;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: .75rem;
+}
+.topic-body p:last-child { margin-bottom: 0; }
+
+.topic-body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.topic-body h4 {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 1rem 0 .5rem;
+}
+.topic-body h4:first-child { margin-top: 0; }
+
+/* Tables inside topics */
+.t-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .79rem;
+  margin: .75rem 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.t-table thead tr { background: var(--ink); color: white; }
+.t-table thead th {
+  padding: .5rem .8rem;
+  text-align: left;
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.t-table tbody tr { border-bottom: 1px solid var(--rule); }
+.t-table tbody tr:last-child { border-bottom: none; }
+.t-table tbody tr:nth-child(even) { background: var(--paper); }
+.t-table tbody td { padding: .5rem .8rem; color: var(--ink-mid); line-height: 1.45; vertical-align: top; }
+.t-table tbody td:first-child { font-weight: 600; color: var(--ink); }
+
+/* Callout boxes */
+.callout {
+  border-radius: 5px;
+  padding: .75rem 1rem;
+  margin: .75rem 0;
+  font-size: .81rem;
+  line-height: 1.6;
+  display: flex;
+  gap: .7rem;
+  align-items: flex-start;
+}
+.callout-icon {
+  flex-shrink: 0;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: .05rem;
+}
+.callout-icon svg { width: 11px; height: 11px; fill: white; }
+.callout.example  { background: var(--teal-lt); border-left: 3px solid var(--teal); }
+.callout.example .callout-icon { background: var(--teal); }
+.callout.example  { color: #1a4a42; }
+.callout.tip      { background: var(--gold-lt); border-left: 3px solid var(--gold); color: #5a3d08; }
+.callout.tip .callout-icon { background: var(--gold); }
+.callout.warning  { background: var(--red-lt); border-left: 3px solid var(--red); color: #6b1a1a; }
+.callout.warning .callout-icon { background: var(--red); }
+.callout.info     { background: var(--accent-lt); border-left: 3px solid var(--accent); color: #0a2d45; }
+.callout.info .callout-icon { background: var(--accent); }
+.callout-body strong { font-weight: 700; display: block; margin-bottom: .2rem; }
+
+/* Formula box */
+.formula-box {
+  background: var(--ink);
+  color: var(--gold);
+  font-family: 'Courier New', monospace;
+  font-size: .88rem;
+  font-weight: 700;
+  padding: .7rem 1.1rem;
+  border-radius: 5px;
+  margin: .75rem 0;
+  letter-spacing: .04em;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.formula-box::before {
+  content: 'f(x)';
+  font-size: .6rem;
+  background: var(--gold);
+  color: var(--ink);
+  padding: .15rem .4rem;
+  border-radius: 3px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: .06em;
+  flex-shrink: 0;
+}
+
+/* Concept pills row */
+.pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin: .5rem 0;
+}
+.cpill {
+  font-size: .72rem;
+  font-weight: 600;
+  padding: .22rem .7rem;
+  border-radius: 100px;
+  border: 1px solid;
+}
+.cpill.blue  { background: var(--accent-lt); color: var(--accent); border-color: #bdd5e8; }
+.cpill.teal  { background: var(--teal-lt); color: var(--teal); border-color: #a8d9d2; }
+.cpill.gold  { background: var(--gold-lt); color: #7a5c0d; border-color: #d4b86a; }
+.cpill.green { background: var(--green-lt); color: var(--green); border-color: #9dcdb5; }
+.cpill.red   { background: var(--red-lt); color: var(--red); border-color: #e0a8a8; }
+
+/* List inside body */
+.topic-body ul, .topic-body ol {
+  padding-left: 1.2rem;
+  margin: .5rem 0;
+}
+.topic-body li {
+  font-size: .84rem;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: .2rem;
+}
+.topic-body li::marker { color: var(--gold); }
+
+/* Correct / Wrong */
+.verdict {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  font-size: .82rem;
+  padding: .35rem 0;
+  line-height: 1.55;
+}
+.verdict-icon {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: .1rem;
+}
+.verdict-icon svg { width: 10px; height: 10px; fill: white; }
+.verdict.ok .verdict-icon { background: var(--green); }
+.verdict.ok { color: var(--green); }
+.verdict.no .verdict-icon { background: var(--red); }
+.verdict.no { color: var(--red); }
+
+/* ── FOOTER ─────────────────────────────────── */
+.ft {
+  background: var(--ink);
+  color: rgba(255,255,255,.4);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  gap: .5rem;
+  padding: 1rem 2rem;
+  font-size: .68rem;
+  letter-spacing: .04em;
+  margin-top: 2rem;
+}
+.ft strong { color: rgba(255,255,255,.7); }
+.ft-center {
+  display: flex; align-items: center; gap: .5rem;
+  color: var(--gold); font-weight: 500;
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+}
+.ft-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
+
+/* ── PROGRESS BAR ───────────────────────────── */
+.read-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--gold);
+  z-index: 999;
+  width: 0%;
+  transition: width .1s linear;
+}
+
+/* ── BACK TO TOP ───────────────────────────── */
+.back-top {
+  position: fixed;
+  bottom: 1.5rem; right: 1.5rem;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .25s, transform .25s;
+  z-index: 200;
+}
+.back-top.visible { opacity: 1; transform: translateY(0); }
+.back-top svg { width: 16px; height: 16px; fill: var(--gold); }
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 720px) {
+  .page-body { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero { padding: 2rem 1.2rem 1.8rem; }
+  .hero-text h1 { font-size: 1.5rem; }
+  .hero-stats { gap: 1.2rem; }
+  .topics-list { padding: .75rem; }
+  .sec-header { padding: .9rem 1rem; }
+  .ft { padding: .85rem 1.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div class="read-progress" id="readProgress"></div>
+
+<!-- ── STICKY NAV ── -->
+<nav class="top-nav" id="topNav">
+  <div class="nav-logo">
+    <img src="https://i.postimg.cc/J0rRwBkv/Chat-GPT-Image-May-21-2026-06-31-05-PM-removebg-preview.png" alt="ITS">
+    <span>ITS</span>
+  </div>
+  <button class="nav-btn active" onclick="scrollToSection('secA')"><span class="nav-dot" style="background:#0e4d6e"></span>Sec A</button>
+  <button class="nav-btn" onclick="scrollToSection('secB')"><span class="nav-dot" style="background:#1b7a6e"></span>Sec B</button>
+  <button class="nav-btn" onclick="scrollToSection('secC')"><span class="nav-dot" style="background:#b8922a"></span>Sec C</button>
+  <button class="nav-btn" onclick="scrollToSection('secD')"><span class="nav-dot" style="background:#1b6e3e"></span>Sec D</button>
+  <button class="nav-btn" onclick="scrollToSection('secE')"><span class="nav-dot" style="background:#b83232"></span>Sec E</button>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <img src="https://i.postimg.cc/J0rRwBkv/Chat-GPT-Image-May-21-2026-06-31-05-PM-removebg-preview.png" alt="ITS Logo">
+    </div>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Official Study Material</div>
+      <h1>Complete Topic Explanations</h1>
+      <p>Every concept, theory, formula and rule from the Teacher Education &amp; Pedagogy examination — explained in full detail with examples, tables, and exam tips.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hs-num">40</div><div class="hs-label">Topics Explained</div></div>
+        <div class="hero-stat"><div class="hs-num">5</div><div class="hs-label">Sections</div></div>
+        <div class="hero-stat"><div class="hs-num">40</div><div class="hs-label">Exam Questions</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hero-rule"></div>
+
+<!-- ── PAGE BODY ── -->
+<div class="page-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-head">Quick Navigation</div>
+
+    <div class="sb-section">
+      <div class="sb-section-title"><div class="sb-dot" style="background:var(--accent)"></div><span style="color:var(--accent)">Section A</span></div>
+      <a class="sb-link" href="#t1">1. Vygotsky's ZPD</a>
+      <a class="sb-link" href="#t2">2. Piaget's Stages</a>
+      <a class="sb-link" href="#t3">3. Erikson's Theory</a>
+      <a class="sb-link" href="#t4">4. Maslow's Needs</a>
+      <a class="sb-link" href="#t5">5. Skinner's Conditioning</a>
+      <a class="sb-link" href="#t6">6. Bandura's Modeling</a>
+      <a class="sb-link" href="#t7">7. Kounin's Management</a>
+      <a class="sb-link" href="#t8">8. Canter Model</a>
+      <a class="sb-link" href="#t9">9. Proactive Behavior</a>
+      <a class="sb-link" href="#t10">10. Rule Setting</a>
+      <a class="sb-link" href="#t11">11. Anchor Activities</a>
+      <a class="sb-link" href="#t12">12. Classroom Layout</a>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-section-title"><div class="sb-dot" style="background:var(--teal)"></div><span style="color:var(--teal)">Section B</span></div>
+      <a class="sb-link" href="#t13">13. Types of Assessment</a>
+      <a class="sb-link" href="#t14">14. Types of Rubrics</a>
+      <a class="sb-link" href="#t15">15. Affective Domain</a>
+      <a class="sb-link" href="#t16">16. Psychomotor Domain</a>
+      <a class="sb-link" href="#t17">17. Item Analysis</a>
+      <a class="sb-link" href="#t18">18. Hidden Curriculum</a>
+      <a class="sb-link" href="#t19">19. Norm vs Criterion</a>
+      <a class="sb-link" href="#t20">20. Metacognition</a>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-section-title"><div class="sb-dot" style="background:var(--gold)"></div><span style="color:#7a5c0d">Section C</span></div>
+      <a class="sb-link" href="#t21">21. Article 25-A</a>
+      <a class="sb-link" href="#t22">22. Nehru vs 14 Points</a>
+      <a class="sb-link" href="#t23">23. Indus Delta</a>
+      <a class="sb-link" href="#t24">24. Waterlogging</a>
+      <a class="sb-link" href="#t25">25. Kot Diji</a>
+      <a class="sb-link" href="#t26">26. Last Sermon</a>
+      <a class="sb-link" href="#t27">27. SAARC</a>
+      <a class="sb-link" href="#t28">28. 18th Amendment</a>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-section-title"><div class="sb-dot" style="background:var(--green)"></div><span style="color:var(--green)">Section D</span></div>
+      <a class="sb-link" href="#t29">29. Semi-circle Perimeter</a>
+      <a class="sb-link" href="#t30">30. Percentage Change</a>
+      <a class="sb-link" href="#t31">31. Inverse Proportion</a>
+      <a class="sb-link" href="#t32">32. Probability — Dice</a>
+      <a class="sb-link" href="#t33">33. Atmosphere Layers</a>
+      <a class="sb-link" href="#t34">34. Chemical Reactions</a>
+      <a class="sb-link" href="#t35">35. Alveoli</a>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-section-title"><div class="sb-dot" style="background:var(--red)"></div><span style="color:var(--red)">Section E</span></div>
+      <a class="sb-link" href="#t36">36. Cloud Service Models</a>
+      <a class="sb-link" href="#t37">37. Subject-Verb Agreement</a>
+      <a class="sb-link" href="#t38">38. Passive Voice</a>
+      <a class="sb-link" href="#t39">39. Indirect Speech</a>
+      <a class="sb-link" href="#t40">40. Dangling Modifiers</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- ══ SECTION A ══ -->
+    <div class="sec-block" id="secA">
+      <div class="sec-header">
+        <div class="sec-header-icon icon-blue">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 1 0 18A9 9 0 0 1 12 3zm0 2a7 7 0 1 0 0 14A7 7 0 0 0 12 5zm0 1.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-1 4.5h2v7h-2v-7z"/></svg>
+        </div>
+        <div class="sec-header-text">
+          <div class="sec-eyebrow eb-blue">Section A</div>
+          <h2>Educational Psychology &amp; Classroom Management</h2>
+          <p>Learning theories, developmental psychology, motivation, behavior &amp; classroom design</p>
+        </div>
+        <div class="sec-badge sb-blue">12 Topics</div>
+      </div>
+
+      <div class="topics-list">
+
+        <!-- T1 -->
+        <div class="topic-card open" id="t1">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">1</div>
+            <div class="topic-title">Vygotsky's Zone of Proximal Development (ZPD) &amp; Scaffolding</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Who is Vygotsky?</strong> Lev Vygotsky was a Soviet psychologist who believed that learning is fundamentally a <strong>social process</strong> — we develop intellectually through interaction with others, not in isolation.</p>
+            <h4>The Two Levels of Learning</h4>
+            <table class="t-table">
+              <thead><tr><th>Level</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>Independent Level</td><td>What a student can do completely alone, without any help</td></tr>
+                <tr><td>Potential Level</td><td>What a student can achieve with guidance, hints, or peer support</td></tr>
+              </tbody>
+            </table>
+            <p>The <strong>Zone of Proximal Development (ZPD)</strong> is the gap between these two levels — the space where real, meaningful learning happens. Vygotsky argued that education should target this zone, not what the student already knows.</p>
+            <h4>What is Scaffolding?</h4>
+            <p><strong>Scaffolding</strong> is the temporary, structured support a teacher provides to help a student cross the ZPD gap — step-by-step prompts, modeled examples, peer pairing, guided questions. Once the student achieves mastery, the support is gradually removed (faded).</p>
+            <div class="callout example">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Classroom Example</strong>A student cannot write a full essay independently. The teacher breaks it into: brainstorm → outline → draft paragraph → revise. Each step is a scaffold. Over time, the student does this process alone.</div>
+            </div>
+            <div class="pills-row">
+              <span class="cpill blue">ZPD = Gap between Independent &amp; Potential Level</span>
+              <span class="cpill blue">Scaffolding = Temporary Support</span>
+              <span class="cpill blue">Social Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- T2 -->
+        <div class="topic-card" id="t2">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">2</div>
+            <div class="topic-title">Piaget's Stages of Cognitive Development</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Jean Piaget</strong> was a Swiss psychologist who proposed that children's thinking develops through four fixed, universal, sequential stages. Each stage builds on the previous one.</p>
+            <table class="t-table">
+              <thead><tr><th>Stage</th><th>Age</th><th>Key Feature</th></tr></thead>
+              <tbody>
+                <tr><td>Sensorimotor</td><td>0–2 yrs</td><td>Learning through senses and physical movement; object permanence develops</td></tr>
+                <tr><td>Preoperational</td><td>2–7 yrs</td><td>Language and symbolic thinking emerge; egocentric; cannot conserve</td></tr>
+                <tr><td>Concrete Operational</td><td>7–11 yrs</td><td>Logical thinking about concrete, tangible objects; conservation achieved</td></tr>
+                <tr><td>Formal Operational</td><td>12+ yrs</td><td>Abstract, hypothetical, and deductive reasoning; algebra and philosophy</td></tr>
+              </tbody>
+            </table>
+            <div class="callout tip">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm-.5 6.5h1V5h-1v2.5zm0-3.5h1V3h-1v1z"/></svg></div>
+              <div class="callout-body"><strong>Exam Application</strong>A student in Concrete Operational stage cannot process pure algebraic abstraction. A teacher must first use physical spring scales, weights, and rulers to demonstrate forces before introducing equations. This is applying Piaget to lesson design.</div>
+            </div>
+            <p>Key concepts: <strong>Assimilation</strong> (fitting new info into existing mental schemas), <strong>Accommodation</strong> (changing schemas to fit new information), <strong>Equilibration</strong> (the balance between the two).</p>
+          </div>
+        </div>
+
+        <!-- T3 -->
+        <div class="topic-card" id="t3">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">3</div>
+            <div class="topic-title">Erikson's Psychosocial Theory — 8 Stages</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Erik Erikson</strong> proposed that human development unfolds across eight stages, each defined by a <strong>psychosocial crisis</strong> — a conflict between two opposing outcomes. Successfully resolving each crisis builds psychological strength; failing to resolve it creates lasting vulnerability.</p>
+            <table class="t-table">
+              <thead><tr><th>Stage</th><th>Age</th><th>Crisis</th><th>Positive Outcome</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>0–1</td><td>Trust vs. Mistrust</td><td>Hope, security</td></tr>
+                <tr><td>2</td><td>1–3</td><td>Autonomy vs. Shame &amp; Doubt</td><td>Will, independence</td></tr>
+                <tr><td>3</td><td>3–6</td><td>Initiative vs. Guilt</td><td>Purpose, initiative</td></tr>
+                <tr><td>4</td><td>6–12</td><td><strong>Industry vs. Inferiority</strong></td><td>Competence, mastery</td></tr>
+                <tr><td>5</td><td>12–18</td><td>Identity vs. Role Confusion</td><td>Fidelity, self-identity</td></tr>
+                <tr><td>6</td><td>Young Adult</td><td>Intimacy vs. Isolation</td><td>Love, connection</td></tr>
+                <tr><td>7</td><td>Middle Adult</td><td>Generativity vs. Stagnation</td><td>Care, productivity</td></tr>
+                <tr><td>8</td><td>Late Adult</td><td>Integrity vs. Despair</td><td>Wisdom, acceptance</td></tr>
+              </tbody>
+            </table>
+            <div class="callout example">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Exam Focus: Stage 4 — Industry vs. Inferiority (Ages 6–12)</strong>A 12-year-old anxious about group projects and fearing peer judgment is navigating this stage. Children who experience academic success build a sense of industry (competence). Those who repeatedly fail develop feelings of inferiority. Teachers play a critical role in providing achievable challenges and positive feedback.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T4 -->
+        <div class="topic-card" id="t4">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">4</div>
+            <div class="topic-title">Maslow's Hierarchy of Needs in Education</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Abraham Maslow</strong> proposed that human motivation follows a pyramid of five need levels. Lower-level needs must be adequately met before a person can direct energy toward higher-level goals like learning.</p>
+            <table class="t-table">
+              <thead><tr><th>Level</th><th>Need</th><th>Educational Relevance</th></tr></thead>
+              <tbody>
+                <tr><td>5 (Top)</td><td>Self-Actualization</td><td>Creative thinking, peak performance, realizing full potential</td></tr>
+                <tr><td>4</td><td>Esteem</td><td>Academic achievement, teacher recognition, self-confidence</td></tr>
+                <tr><td>3</td><td>Love &amp; Belonging</td><td>Classroom community, peer friendships, teacher relationships</td></tr>
+                <tr><td>2</td><td>Safety</td><td>Safe school environment, predictable routines, no bullying</td></tr>
+                <tr><td>1 (Base)</td><td><strong>Physiological</strong></td><td>Food, water, sleep, warmth — without these, nothing else works</td></tr>
+              </tbody>
+            </table>
+            <div class="callout tip">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm-.5 6.5h1V5h-1v2.5zm0-3.5h1V3h-1v1z"/></svg></div>
+              <div class="callout-body"><strong>Why School Breakfast Programs Work</strong>A free breakfast program is a highly effective educational intervention because it meets <strong>physiological needs (Level 1)</strong>, removing a fundamental barrier that prevents students from engaging with any higher cognitive goal. A hungry child physically cannot focus on learning.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T5 -->
+        <div class="topic-card" id="t5">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">5</div>
+            <div class="topic-title">Skinner's Operant Conditioning</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>B.F. Skinner</strong> argued that all behavior is shaped by its consequences. He identified four behavior modification mechanisms:</p>
+            <table class="t-table">
+              <thead><tr><th>Mechanism</th><th>Action</th><th>Effect on Behavior</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Positive Reinforcement</strong></td><td>Add something pleasant</td><td>Increases behavior</td><td>Gold star for good work</td></tr>
+                <tr><td><strong>Negative Reinforcement</strong></td><td>Remove something unpleasant</td><td>Increases behavior</td><td>Drop lowest quiz score if homework complete</td></tr>
+                <tr><td><strong>Positive Punishment</strong></td><td>Add something unpleasant</td><td>Decreases behavior</td><td>Extra homework for disruption</td></tr>
+                <tr><td><strong>Negative Punishment</strong></td><td>Remove something pleasant</td><td>Decreases behavior</td><td>Lose recess for misbehavior</td></tr>
+              </tbody>
+            </table>
+            <div class="callout warning">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1.5L9 8.5H1L5 1.5zm0 2v2.5h-.01L4.5 6h1V3.5H5zm0 3a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1z"/></svg></div>
+              <div class="callout-body"><strong>Most Common Exam Mistake</strong>Negative Reinforcement is NOT punishment. It still <em>increases</em> a desired behavior — by removing something the student dislikes. Dropping a low quiz score is negative reinforcement: you remove the bad grade (unpleasant stimulus) to encourage the desired behavior (completing homework).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T6 -->
+        <div class="topic-card" id="t6">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">6</div>
+            <div class="topic-title">Bandura's Social Learning Theory &amp; Observational Modeling</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Albert Bandura</strong> demonstrated that humans learn by observing others, not just through direct rewards or punishments. This is called <strong>observational learning</strong> or <strong>modeling</strong>.</p>
+            <h4>The Four Processes of Observational Learning</h4>
+            <table class="t-table">
+              <thead><tr><th>Step</th><th>Process</th><th>What it Means</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td><strong>Attention</strong></td><td>The learner must notice and observe the model's behavior</td></tr>
+                <tr><td>2</td><td><strong>Retention</strong></td><td>The behavior must be stored in memory for later use</td></tr>
+                <tr><td>3</td><td><strong>Reproduction</strong></td><td>The learner must have the physical ability to imitate the behavior</td></tr>
+                <tr><td>4</td><td><strong>Motivation</strong></td><td>The learner must want to reproduce the behavior (incentive)</td></tr>
+              </tbody>
+            </table>
+            <p>Bandura also introduced <strong>self-efficacy</strong> — a person's belief in their own ability to succeed. Watching a model successfully complete a task boosts the observer's own self-efficacy.</p>
+            <div class="callout example">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>In the Classroom</strong>A teacher solves a difficult math problem on the board while thinking aloud: "First I notice the variable is on both sides, so I'll move it to one side..." A struggling student watches, follows the logic, and gains confidence. That confidence gain is Bandura's observational learning and self-efficacy in action.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T7 -->
+        <div class="topic-card" id="t7">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">7</div>
+            <div class="topic-title">Kounin's Classroom Management: Withitness &amp; Overlappingness</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Jacob Kounin</strong> studied what separates effective classroom managers from ineffective ones. He identified several key teacher behaviors:</p>
+            <table class="t-table">
+              <thead><tr><th>Concept</th><th>Definition</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Withitness</strong></td><td>Teacher always knows what is happening in every part of the room; students feel the teacher has "eyes in the back of their head"</td><td>Teacher addresses a student whispering at the back without turning away from the board</td></tr>
+                <tr><td><strong>Overlappingness</strong></td><td>Teacher handles two or more classroom events simultaneously without stopping either task</td><td>Answering one student's question while using a hand gesture to redirect an off-task student across the room</td></tr>
+                <tr><td><strong>Momentum</strong></td><td>Keeping lessons moving at a consistent pace without unnecessary slowdowns</td><td>Smooth transitions between activities; no long pauses</td></tr>
+                <tr><td><strong>Smoothness</strong></td><td>Avoiding abrupt interruptions or sudden topic changes that disrupt lesson flow</td><td>Finishing a point before transitioning to the next task</td></tr>
+              </tbody>
+            </table>
+            <div class="callout info">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Exam Distinction</strong>The exam question describes a teacher who monitors a corner group, redirects two students with a gesture, AND answers a nearby student simultaneously. This is specifically <strong>Overlappingness</strong> — managing multiple events at once — not just Withitness (awareness).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T8 -->
+        <div class="topic-card" id="t8">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">8</div>
+            <div class="topic-title">Canter Model of Assertive Discipline</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Lee and Marlene Canter</strong> developed Assertive Discipline based on the belief that every teacher has the right to teach and every student has the right to learn, in a disruption-free environment.</p>
+            <h4>Core Principles</h4>
+            <ul>
+              <li>State rules clearly and positively at the start of the year</li>
+              <li>Apply consequences <strong>consistently, calmly, and firmly</strong> — never with emotion or argument</li>
+              <li>Use a <strong>discipline hierarchy</strong>: warning → mild consequence → stronger consequence → parent contact → administration</li>
+              <li>Never shame students publicly or ignore repeat violations</li>
+              <li>Recognize and reward compliant behavior equally</li>
+            </ul>
+            <div class="callout example">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Correct Response to Lateness</strong>"This is the third time you have arrived late. That is Rule 3. The consequence is [detention/note home]." — stated calmly, without lecturing, without exception. No arguing, no public embarrassment.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T9 -->
+        <div class="topic-card" id="t9">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">9</div>
+            <div class="topic-title">Proactive Behavior Management Strategies</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Proactive management <strong>prevents misbehavior before it starts</strong>, rather than reacting after it occurs. Key strategies include:</p>
+            <ul>
+              <li><strong>Proximity:</strong> Walking near restless students rather than calling them out verbally</li>
+              <li><strong>Nonverbal signals:</strong> Eye contact, gestures, and pausing to signal awareness without interrupting the lesson</li>
+              <li><strong>Clear instructions:</strong> Giving specific, step-by-step directions before activities begin eliminates confusion-driven disruption</li>
+              <li><strong>Routine building:</strong> Predictable daily routines reduce anxiety and transition chaos</li>
+              <li><strong>Relationship-building:</strong> Students who feel respected and known are less likely to misbehave</li>
+              <li><strong>Seating arrangements:</strong> Thoughtful seating reduces off-task peer interactions</li>
+            </ul>
+            <div class="callout tip">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm-.5 6.5h1V5h-1v2.5zm0-3.5h1V3h-1v1z"/></svg></div>
+              <div class="callout-body"><strong>Best First Response to Off-Task Behavior</strong>Quietly walk toward the student's desk while continuing to address the class. This uses proximity as a non-disruptive, proactive signal — no escalation, no public confrontation, no interruption to learning.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T10 -->
+        <div class="topic-card" id="t10">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">10</div>
+            <div class="topic-title">Classroom Rule Setting &amp; Collaborative Agreement</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Research consistently shows that students comply with and internalize rules more effectively when they participate in creating them. Best practice principles:</p>
+            <ul>
+              <li>Involve students in <strong>co-creating rules</strong> on the very first day</li>
+              <li>Keep rules to <strong>3–5 maximum</strong> — more than that is unrememberable</li>
+              <li>Frame rules <strong>positively</strong>: "Respect others' space" not "Don't push"</li>
+              <li>Discuss concretely what each rule <em>looks like, sounds like, and feels like</em> in practice</li>
+              <li>Display rules prominently and revisit them after breaks or incidents</li>
+              <li>Rules should cover broad principles, not every possible behavior</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- T11 -->
+        <div class="topic-card" id="t11">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">11</div>
+            <div class="topic-title">Anchor Activities &amp; Transition Management</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Transitions</strong> — the moments between activities, between subjects, or when students finish early — are the highest-risk periods for off-task behavior and disruption. The primary cause is <strong>idle time</strong>.</p>
+            <p><strong>Anchor Activities</strong> are pre-assigned, meaningful, independent tasks that students begin automatically the moment they finish their primary work — no instruction from the teacher required.</p>
+            <h4>Examples of Effective Anchor Activities</h4>
+            <ul>
+              <li>A reading journal entry (respond to a posted prompt)</li>
+              <li>A math challenge problem written on the board</li>
+              <li>Vocabulary enrichment cards</li>
+              <li>Independent reading of a chosen book</li>
+              <li>Editing a writing portfolio draft</li>
+            </ul>
+            <p>The key feature: students know the routine so well they begin automatically, eliminating the gap between "I finished" and "the class continues."</p>
+          </div>
+        </div>
+
+        <!-- T12 -->
+        <div class="topic-card" id="t12">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">12</div>
+            <div class="topic-title">Physical Classroom Layout for Cooperative Learning</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>The physical arrangement of furniture directly shapes the type of interaction possible in a classroom. There is no single "best" layout — it depends on the pedagogical goal.</p>
+            <table class="t-table">
+              <thead><tr><th>Layout</th><th>Best For</th><th>Limitation</th></tr></thead>
+              <tbody>
+                <tr><td>Traditional Rows</td><td>Direct instruction, exams, individual focus</td><td>Discourages peer interaction</td></tr>
+                <tr><td><strong>Cluster/Pods</strong></td><td>Cooperative learning, peer discussion, project work</td><td>Can increase off-task chatter</td></tr>
+                <tr><td>Horseshoe / U-shape</td><td>Whole-class Socratic discussion</td><td>Not suited for group tasks</td></tr>
+                <tr><td>Pairs Side-by-Side</td><td>Peer tutoring, partner tasks</td><td>Limited to pairs only</td></tr>
+              </tbody>
+            </table>
+            <p>For <strong>student-led discussions and cooperative peer dialogue</strong>, <strong>seating pods (clusters of 4–6 desks)</strong> are the optimal choice — they allow face-to-face eye contact, natural group formation, and easy sharing of materials.</p>
+          </div>
+        </div>
+
+      </div><!-- /topics-list A -->
+    </div><!-- /sec-block A -->
+
+    <!-- ══ SECTION B ══ -->
+    <div class="sec-block" id="secB">
+      <div class="sec-header">
+        <div class="sec-header-icon icon-teal">
+          <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="sec-header-text">
+          <div class="sec-eyebrow eb-teal">Section B</div>
+          <h2>Assessment, Curriculum &amp; Pedagogy</h2>
+          <p>Assessment types, Bloom's taxonomies, rubrics, curriculum theory, and metacognition</p>
+        </div>
+        <div class="sec-badge sb-teal">8 Topics</div>
+      </div>
+      <div class="topics-list">
+
+        <!-- T13 -->
+        <div class="topic-card" id="t13">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">13</div>
+            <div class="topic-title">Types of Assessment: Diagnostic, Formative, Summative, Placement</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <table class="t-table">
+              <thead><tr><th>Type</th><th>When Used</th><th>Purpose</th><th>Usually Graded?</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Diagnostic</strong></td><td>Before a unit begins</td><td>Identify prior knowledge, misconceptions, and learning gaps</td><td>No</td></tr>
+                <tr><td><strong>Formative</strong></td><td>During instruction</td><td>Monitor ongoing learning; give feedback; adjust teaching in real time</td><td>No</td></tr>
+                <tr><td><strong>Summative</strong></td><td>End of unit/term</td><td>Measure final achievement against learning objectives</td><td>Yes</td></tr>
+                <tr><td><strong>Placement</strong></td><td>Before enrollment</td><td>Determine which level, group, or program a student should join</td><td>Informational</td></tr>
+              </tbody>
+            </table>
+            <div class="callout info">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Key Exam Distinction</strong>The phonics check administered <em>before</em> starting a reading unit = <strong>Diagnostic</strong>. It looks backward at what students already know. Formative assessment happens <em>during</em> instruction. Summative happens <em>after</em>.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T14 -->
+        <div class="topic-card" id="t14">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">14</div>
+            <div class="topic-title">Types of Rubrics: Holistic, Analytic, Single-Point, Checklist</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <table class="t-table">
+              <thead><tr><th>Type</th><th>Structure</th><th>Best For</th><th>Feedback Quality</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Holistic</strong></td><td>One overall score for entire product</td><td>Quick, large-scale scoring; essays</td><td>Low — no specific diagnosis</td></tr>
+                <tr><td><strong>Analytic</strong></td><td>Separate criteria, each scored independently</td><td>Complex multi-step projects; science labs</td><td>High — targeted per criterion</td></tr>
+                <tr><td><strong>Single-Point</strong></td><td>Describes only proficiency level; comments for above/below</td><td>Growth mindset assignments; portfolios</td><td>High — encourages reflection</td></tr>
+                <tr><td><strong>Checklist</strong></td><td>Yes/No — criterion met or not met</td><td>Skills verification; process tasks</td><td>Low — binary only</td></tr>
+              </tbody>
+            </table>
+            <p>For a complex multi-step science project requiring feedback on "data analysis" and "scientific accuracy" separately — the <strong>Analytic Rubric</strong> is the correct choice because it breaks down performance criterion by criterion.</p>
+          </div>
+        </div>
+
+        <!-- T15 -->
+        <div class="topic-card" id="t15">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">15</div>
+            <div class="topic-title">Krathwohl's Affective Domain — 5 Levels</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Krathwohl's taxonomy measures learning in the realm of <strong>attitudes, emotions, and values</strong> — not knowledge or physical skills.</p>
+            <table class="t-table">
+              <thead><tr><th>Level</th><th>Name</th><th>Description</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Receiving</td><td>Paying attention to a value or stimulus</td><td>Listening to a talk on civic duty</td></tr>
+                <tr><td>2</td><td>Responding</td><td>Actively participating and reacting</td><td>Participating in a class discussion about democracy</td></tr>
+                <tr><td>3</td><td><strong>Valuing</strong></td><td>Believing in the worth of a value; acting on it voluntarily</td><td>Voluntarily joining a community cleanup drive</td></tr>
+                <tr><td>4</td><td>Organizing</td><td>Integrating values into a personal value system; prioritizing</td><td>Adjusting personal schedule to prioritize civic participation</td></tr>
+                <tr><td>5</td><td>Characterizing</td><td>The value defines the person's lifestyle consistently</td><td>Democratic values are inseparable from who the person is</td></tr>
+              </tbody>
+            </table>
+            <p>The objective "consistent commitment to democratic values demonstrated through volunteering" = <strong>Level 3: Valuing</strong> — the student doesn't just know about the value; they act on it voluntarily.</p>
+          </div>
+        </div>
+
+        <!-- T16 -->
+        <div class="topic-card" id="t16">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">16</div>
+            <div class="topic-title">Dave's Psychomotor Domain — Physical Skill Levels</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Dave's taxonomy measures the development of <strong>physical and motor skills</strong> from raw imitation to automatic mastery.</p>
+            <table class="t-table">
+              <thead><tr><th>Level</th><th>Name</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Imitation</td><td>Observing and copying a demonstrated physical action under direct supervision</td></tr>
+                <tr><td>2</td><td>Manipulation</td><td>Performing the skill by following written or verbal instructions (not from watching)</td></tr>
+                <tr><td>3</td><td><strong>Precision</strong></td><td>Performing the skill <em>independently and accurately</em> without instructions or supervision</td></tr>
+                <tr><td>4</td><td>Articulation</td><td>Combining multiple skills smoothly in sequence; adapting to changing conditions</td></tr>
+                <tr><td>5</td><td>Naturalization</td><td>Skills are fully automatic and unconscious — highest mastery level</td></tr>
+              </tbody>
+            </table>
+            <p>A student who performs a complex titration <strong>independently and accurately without written step-by-step instructions</strong> = <strong>Precision (Level 3)</strong>. They have internalized the skill but have not yet reached automatic naturalization.</p>
+          </div>
+        </div>
+
+        <!-- T17 -->
+        <div class="topic-card" id="t17">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">17</div>
+            <div class="topic-title">Item Analysis — Difficulty Index &amp; Discrimination Index</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <h4>Difficulty Index (p)</h4>
+            <p>The proportion of all students who answered the item correctly.</p>
+            <div class="formula-box">p = (Number who answered correctly) ÷ (Total students)</div>
+            <p>p = 1.0 means everyone got it right (too easy). p = 0.0 means no one got it right (too hard). Ideal range: <strong>p = 0.30 to 0.70</strong>.</p>
+            <h4>Discrimination Index (d)</h4>
+            <p>Measures how well a question separates high-achieving students from low-achieving students.</p>
+            <div class="formula-box">d = (% correct in top 27%) − (% correct in bottom 27%)</div>
+            <table class="t-table">
+              <thead><tr><th>d value</th><th>Interpretation</th></tr></thead>
+              <tbody>
+                <tr><td>d ≥ +0.30</td><td>Good item — effectively discriminates</td></tr>
+                <tr><td>d = 0.00</td><td>Poor item — does not differentiate; both groups equally correct or incorrect</td></tr>
+                <tr><td>d &lt; 0</td><td>Flawed item — low achievers outperformed high achievers; review and revise immediately</td></tr>
+              </tbody>
+            </table>
+            <div class="callout warning">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1.5L9 8.5H1L5 1.5z"/></svg></div>
+              <div class="callout-body"><strong>Exam Scenario</strong>If both the top 27% AND bottom 27% got the question correct at the same rate, d = 0.00. The item fails to discriminate between high and low achievers and must be revised — even if p = 0.50 (moderate difficulty).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T18 -->
+        <div class="topic-card" id="t18">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">18</div>
+            <div class="topic-title">Hidden Curriculum vs. Formal Curriculum</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <table class="t-table">
+              <thead><tr><th>Type</th><th>Definition</th><th>Examples</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Formal Curriculum</strong></td><td>Official, planned, documented academic content with stated learning objectives</td><td>Math syllabus, science textbook, history unit plan</td></tr>
+                <tr><td><strong>Hidden Curriculum</strong></td><td>Unwritten, unspoken, implicit lessons absorbed through school culture, structure, and norms</td><td>Standing in line = patience; raising hands = respecting authority; punctuality rules = valuing time</td></tr>
+                <tr><td>Extra-Curricular</td><td>Activities outside formal academic instruction but organized by school</td><td>Sports teams, debate club, drama society</td></tr>
+              </tbody>
+            </table>
+            <p>The hidden curriculum profoundly shapes students' <strong>values, norms, and social behaviors</strong> — often more durably than formal instruction — yet it appears in no textbook or lesson plan.</p>
+          </div>
+        </div>
+
+        <!-- T19 -->
+        <div class="topic-card" id="t19">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">19</div>
+            <div class="topic-title">Norm-Referenced vs. Criterion-Referenced Tests</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <table class="t-table">
+              <thead><tr><th></th><th>Norm-Referenced</th><th>Criterion-Referenced</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Comparison basis</strong></td><td>Student vs. other students (peers)</td><td>Student vs. a fixed performance standard</td></tr>
+                <tr><td><strong>Score meaning</strong></td><td>Percentile rank (e.g., "top 10%")</td><td>Pass/fail based on a cut score or benchmark</td></tr>
+                <tr><td><strong>Purpose</strong></td><td>Rank and select students</td><td>Verify whether a standard is met</td></tr>
+                <tr><td><strong>Example</strong></td><td>National university entrance exam</td><td>Teacher licensing exam, driving test</td></tr>
+              </tbody>
+            </table>
+            <div class="callout tip">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm-.5 6.5h1V5h-1v2.5zm0-3.5h1V3h-1v1z"/></svg></div>
+              <div class="callout-body"><strong>Memory Aid</strong>"Criterion" = standard. A teacher licensing exam checks if you meet the professional competence standard — your neighbor's score is irrelevant. That makes it criterion-referenced.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- T20 -->
+        <div class="topic-card" id="t20">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">20</div>
+            <div class="topic-title">Metacognition &amp; Reflective Learning</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Metacognition</strong> literally means "thinking about your own thinking." It involves three interconnected skills:</p>
+            <ul>
+              <li><strong>Metacognitive Knowledge:</strong> Knowing what you understand and what you don't; knowing which strategies work for you</li>
+              <li><strong>Metacognitive Monitoring:</strong> Evaluating the quality and progress of your own thinking as you work</li>
+              <li><strong>Metacognitive Regulation:</strong> Adjusting your strategies when something isn't working</li>
+            </ul>
+            <p>A <strong>reflective journal</strong> asking "How did I solve this problem?", "What would I change?", and "How has my understanding shifted?" is a classic metacognitive practice. It builds <strong>self-directed, independent learners</strong> who can manage their own learning process.</p>
+            <div class="callout example">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Why This Matters</strong>Students who develop metacognitive skills outperform peers on complex tasks because they self-correct in real time. They are not just learning content — they are learning how to learn.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /sec-block B -->
+
+    <!-- ══ SECTION C ══ -->
+    <div class="sec-block" id="secC">
+      <div class="sec-header">
+        <div class="sec-header-icon icon-gold">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="sec-header-text">
+          <div class="sec-eyebrow eb-gold">Section C</div>
+          <h2>Pakistan Studies, Civics &amp; General Knowledge</h2>
+          <p>Constitution, history, geography, Islamic studies, and national institutions</p>
+        </div>
+        <div class="sec-badge sb-gold">8 Topics</div>
+      </div>
+      <div class="topics-list">
+
+        <div class="topic-card" id="t21">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">21</div>
+            <div class="topic-title">Article 25-A — Right to Free &amp; Compulsory Education</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Inserted by the <strong>18th Constitutional Amendment in 2010</strong>, Article 25-A states:</p>
+            <div class="callout info">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Article 25-A Text</strong>"The State shall provide free and compulsory education to all children of the age of five to sixteen years in such manner as may be determined by law."</div>
+            </div>
+            <p>This made basic education a <strong>fundamental right</strong> — not merely a policy aspiration. Key confusions to avoid:</p>
+            <table class="t-table">
+              <thead><tr><th>Article</th><th>Deals With</th></tr></thead>
+              <tbody>
+                <tr><td><strong>25-A</strong></td><td>Free and compulsory education (ages 5–16)</td></tr>
+                <tr><td>19-A</td><td>Right to access information</td></tr>
+                <tr><td>38</td><td>Social and economic well-being of citizens</td></tr>
+                <tr><td>45</td><td>President's power of pardon</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t22">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">22</div>
+            <div class="topic-title">Nehru Report (1928) vs. Quaid-e-Azam's 14 Points (1929)</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <table class="t-table">
+              <thead><tr><th></th><th>Nehru Report (1928)</th><th>14 Points (1929)</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Drafted by</strong></td><td>Motilal Nehru (Congress)</td><td>Muhammad Ali Jinnah (Muslim League)</td></tr>
+                <tr><td><strong>Constitution type</strong></td><td>Strong unitary central government</td><td>Federal constitution</td></tr>
+                <tr><td><strong>Residual powers</strong></td><td>Retained at the center</td><td>Devolved to provinces</td></tr>
+                <tr><td><strong>Electorates</strong></td><td>Joint electorates (no separate Muslim seats)</td><td>Separate electorates for Muslims</td></tr>
+                <tr><td><strong>Muslim seats (center)</strong></td><td>No guaranteed Muslim representation</td><td>One-third Muslim representation guaranteed</td></tr>
+              </tbody>
+            </table>
+            <p>The core constitutional clash: <strong>centralized unitary India (Nehru) vs. federal system with provincial autonomy and Muslim protections (Jinnah)</strong>. This fundamental incompatibility accelerated the path toward Pakistan.</p>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t23">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">23</div>
+            <div class="topic-title">Indus River Delta &amp; Mangrove Ecology</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>The Indus Delta in southern Sindh is home to one of the largest mangrove ecosystems in the world. These forests serve multiple critical ecological functions:</p>
+            <ul>
+              <li><strong>Sea intrusion barrier:</strong> Physically block saltwater from penetrating inland agricultural land</li>
+              <li><strong>Marine biodiversity:</strong> Serve as nursery habitats for fish, shrimp, and marine species</li>
+              <li><strong>Coastal protection:</strong> Shield coastlines from erosion, cyclones, and storm surges</li>
+              <li><strong>Carbon sequestration:</strong> Absorb and store large amounts of atmospheric carbon</li>
+              <li><strong>Bird habitats:</strong> Support hundreds of migratory and resident bird species</li>
+            </ul>
+            <div class="callout warning">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1.5L9 8.5H1L5 1.5z"/></svg></div>
+              <div class="callout-body"><strong>Ecological Crisis</strong>Reduced river flow caused by upstream dams and irrigation diversions has drastically reduced freshwater reaching the delta, shrinking mangrove coverage by over 70% in recent decades.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t24">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">24</div>
+            <div class="topic-title">Agricultural Challenge: Waterlogging &amp; Soil Salinity</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Pakistan has one of the world's largest canal irrigation systems — but it comes with devastating side effects in the arid plains of Punjab and Sindh:</p>
+            <table class="t-table">
+              <thead><tr><th>Problem</th><th>Cause</th><th>Effect</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Waterlogging</strong></td><td>Over-irrigation raises the water table too close to the soil surface</td><td>Ground becomes saturated; plant roots suffocate; crops die</td></tr>
+                <tr><td><strong>Salinity</strong></td><td>In arid heat, waterlogged water evaporates rapidly, leaving dissolved salts behind</td><td>White salt crust forms on topsoil; land becomes agriculturally unusable</td></tr>
+              </tbody>
+            </table>
+            <p>Together, these have rendered <strong>millions of acres</strong> of prime agricultural land unproductive. SCARP (Salinity Control and Reclamation Project) drainage systems were introduced as a solution.</p>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t25">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">25</div>
+            <div class="topic-title">Kot Diji — Pre-Harappan Site, Khairpur District</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Kot Diji</strong> is a pre-Harappan archaeological site located in <strong>Khairpur District, Sindh, Pakistan</strong>. It dates to approximately <strong>3300–2600 BCE</strong> — preceding the mature Mohenjo-daro phase of the Indus Valley Civilization.</p>
+            <ul>
+              <li><strong>Significance:</strong> Demonstrates that sophisticated urban planning began in this region earlier than Mohenjo-daro's peak period</li>
+              <li><strong>Finds:</strong> Mud-brick defensive walls, pottery with geometric patterns, evidence of town planning</li>
+              <li><strong>Relationship to Mohenjo-daro:</strong> Represents an early/transitional phase that evolved into the mature Harappan culture</li>
+            </ul>
+            <div class="callout tip">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm-.5 6.5h1V5h-1v2.5zm0-3.5h1V3h-1v1z"/></svg></div>
+              <div class="callout-body"><strong>Location Memory Aid</strong>Kot Diji = <strong>Khairpur</strong> District. Not Larkana (Mohenjo-daro is there), not Sukkur, not Hyderabad.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t26">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">26</div>
+            <div class="topic-title">The Last Sermon — Khutbah Hajjat-ul-Wida</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Delivered by <strong>Prophet Muhammad ﷺ</strong> on the 9th of Dhul Hijjah, 10 AH (632 CE) on the plains of <strong>Arafat</strong> during his only and final Hajj — hence "Hajjat-ul-Wida" (The Farewell Pilgrimage). An estimated 100,000+ companions were present.</p>
+            <h4>Key Universal Declarations</h4>
+            <ul>
+              <li><strong>Absolute human equality:</strong> "An Arab has no superiority over a non-Arab, nor a non-Arab over an Arab; a white person has no superiority over a black, except by piety and good deeds"</li>
+              <li>Sanctity and inviolability of every person's life, wealth, and honor</li>
+              <li>Rights and dignified treatment of women</li>
+              <li>Abolition of pre-Islamic blood feuds and interest (riba)</li>
+              <li>Command to hold firm to the Quran and Sunnah</li>
+            </ul>
+            <div class="callout example">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Historical Significance</strong>Regarded as one of history's earliest declarations of universal human rights — over 1,300 years before the United Nations Universal Declaration of Human Rights (1948).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t27">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">27</div>
+            <div class="topic-title">SAARC — Structure, Members &amp; Objectives</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>South Asian Association for Regional Cooperation (SAARC)</strong> was founded in <strong>1985 in Dhaka, Bangladesh</strong>.</p>
+            <table class="t-table">
+              <thead><tr><th>Feature</th><th>Details</th></tr></thead>
+              <tbody>
+                <tr><td>Founded</td><td>8 December 1985, Dhaka</td></tr>
+                <tr><td>Headquarters</td><td>Kathmandu, Nepal</td></tr>
+                <tr><td>Members</td><td>Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, Sri Lanka, Afghanistan (2007)</td></tr>
+                <tr><td>Nature</td><td>Regional cooperation platform — NOT a military alliance</td></tr>
+                <tr><td>Decision-making</td><td>Unanimous consensus required</td></tr>
+              </tbody>
+            </table>
+            <p><strong>Purpose:</strong> Promote economic growth, social progress, cultural development, and collective self-reliance among South Asian nations. Bilateral disputes (like India-Pakistan) cannot be raised within SAARC forums.</p>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t28">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">28</div>
+            <div class="topic-title">18th Constitutional Amendment (2010) &amp; Education Devolution</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Passed <strong>unanimously</strong> by Pakistan's Parliament in <strong>April 2010</strong>, the 18th Amendment was the most sweeping constitutional reform since 1973.</p>
+            <h4>What Changed for Education</h4>
+            <ul>
+              <li>The <strong>Concurrent Legislative List was abolished</strong> — all subjects shared between federal and provincial governments were transferred fully to provinces</li>
+              <li><strong>Education became entirely a provincial subject</strong> — curriculum design, textbook production, examination boards, teacher training</li>
+              <li>Each of the four provinces (Sindh, Punjab, KPK, Balochistan) now runs its own independent education policy</li>
+              <li><strong>Article 25-A</strong> (free compulsory education for ages 5–16) was simultaneously inserted into the Constitution</li>
+              <li>The federal Ministry of Education's role was substantially reduced</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /sec-block C -->
+
+    <!-- ══ SECTION D ══ -->
+    <div class="sec-block" id="secD">
+      <div class="sec-header">
+        <div class="sec-header-icon icon-green">
+          <svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10m4 10V4m4 16v-7m4 7V8"/></svg>
+        </div>
+        <div class="sec-header-text">
+          <div class="sec-eyebrow eb-green">Section D</div>
+          <h2>Mathematics &amp; General Science</h2>
+          <p>Applied numeracy, probability, earth science, chemistry, and human biology</p>
+        </div>
+        <div class="sec-badge sb-green">7 Topics</div>
+      </div>
+      <div class="topics-list">
+
+        <div class="topic-card" id="t29">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">29</div>
+            <div class="topic-title">Perimeter of a Semi-Circle (π = 22/7)</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>A semi-circle's perimeter has two parts: the curved arc (half the circumference) plus the straight diameter.</p>
+            <div class="formula-box">Perimeter = πr + 2r</div>
+            <p><strong>Worked Solution (r = 7 m, π = 22/7):</strong></p>
+            <ul>
+              <li>Curved arc = πr = (22/7) × 7 = <strong>22 m</strong></li>
+              <li>Diameter = 2r = 2 × 7 = <strong>14 m</strong></li>
+              <li>Total perimeter = 22 + 14 = <strong>36 metres ✓</strong></li>
+            </ul>
+            <div class="callout warning">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1.5L9 8.5H1L5 1.5z"/></svg></div>
+              <div class="callout-body"><strong>Common Mistake</strong>Students often calculate only the curved arc (πr = 22 m) and forget to add the diameter (2r = 14 m). The perimeter of a semi-circle always includes BOTH the arc AND the diameter.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t30">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">30</div>
+            <div class="topic-title">Percentage Increase &amp; Decrease — Applied</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Problem:</strong> School enrollment: 400 → increased to 480 → then decreased by 10%. Net % change from original 400?</p>
+            <div class="formula-box">% Change = (New − Original) ÷ Original × 100</div>
+            <p><strong>Step-by-step:</strong></p>
+            <ul>
+              <li>After increase: 480 students</li>
+              <li>10% decrease from 480: 480 × 0.10 = 48 students leave</li>
+              <li>Final enrollment: 480 − 48 = <strong>432 students</strong></li>
+              <li>Net change from original 400: (432 − 400) ÷ 400 × 100 = 32/400 × 100 = <strong>8% increase ✓</strong></li>
+            </ul>
+            <div class="callout tip">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm-.5 6.5h1V5h-1v2.5zm0-3.5h1V3h-1v1z"/></svg></div>
+              <div class="callout-body"><strong>Key Rule</strong>A 20% increase followed by a 10% decrease does NOT equal a 10% net increase. You apply the decrease to the already-increased number (480), not the original (400).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t31">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">31</div>
+            <div class="topic-title">Inverse Proportion — Work, Rate &amp; Time</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>In inverse proportion: as one quantity increases, the other decreases proportionally. More workers = less time for the same job.</p>
+            <div class="formula-box">Workers₁ × Time₁ = Workers₂ × Time₂</div>
+            <p><strong>Worked Solution:</strong> 12 teachers grade papers in 4 hours. How long for 8 teachers?</p>
+            <ul>
+              <li>12 × 4 = 8 × T₂</li>
+              <li>48 = 8T₂</li>
+              <li>T₂ = 48 ÷ 8 = <strong>6 hours ✓</strong></li>
+            </ul>
+            <p>Intuition check: fewer teachers (8 vs 12) means the job takes longer (6 hrs vs 4 hrs). ✓</p>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t32">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">32</div>
+            <div class="topic-title">Probability with Two Dice — Sample Space</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">P(event) = Favorable outcomes ÷ Total outcomes</div>
+            <p><strong>Total outcomes</strong> when rolling two standard dice: 6 × 6 = <strong>36</strong></p>
+            <p><strong>Pairs that sum to 9:</strong></p>
+            <table class="t-table">
+              <thead><tr><th>Die 1</th><th>Die 2</th><th>Sum</th></tr></thead>
+              <tbody>
+                <tr><td>3</td><td>6</td><td>9 ✓</td></tr>
+                <tr><td>4</td><td>5</td><td>9 ✓</td></tr>
+                <tr><td>5</td><td>4</td><td>9 ✓</td></tr>
+                <tr><td>6</td><td>3</td><td>9 ✓</td></tr>
+              </tbody>
+            </table>
+            <p>Favorable outcomes = 4 &nbsp;→&nbsp; P(sum = 9) = 4/36 = <strong>1/9 ✓</strong></p>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t33">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">33</div>
+            <div class="topic-title">Atmospheric Layers — Troposphere vs. Stratosphere</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <table class="t-table">
+              <thead><tr><th>Layer</th><th>Altitude</th><th>Temperature with Height</th><th>Reason</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Troposphere</strong></td><td>0–12 km</td><td>Decreases (~6.5°C per km)</td><td>Heat source is Earth's surface; moving away from it cools air</td></tr>
+                <tr><td><strong>Stratosphere</strong></td><td>12–50 km</td><td>Increases with altitude</td><td>Ozone layer (O₃) absorbs UV radiation, converting it to heat</td></tr>
+                <tr><td>Mesosphere</td><td>50–80 km</td><td>Decreases again</td><td>No significant UV absorbers at this level</td></tr>
+                <tr><td>Thermosphere</td><td>80+ km</td><td>Increases sharply</td><td>Thin air molecules absorb intense solar radiation</td></tr>
+              </tbody>
+            </table>
+            <div class="callout example">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg></div>
+              <div class="callout-body"><strong>Why Aircraft Fly at the Stratosphere Boundary</strong>The temperature inversion in the stratosphere creates a very stable, non-turbulent air layer — ideal for commercial aviation at 10–12 km altitude.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t34">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">34</div>
+            <div class="topic-title">Chemical vs. Physical Change; Exothermic vs. Endothermic</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <table class="t-table">
+              <thead><tr><th></th><th>Physical Change</th><th>Chemical Change</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Definition</strong></td><td>Change in form or state; no new substance formed</td><td>New substance(s) created; original substance no longer exists</td></tr>
+                <tr><td><strong>Reversibility</strong></td><td>Usually reversible</td><td>Usually irreversible</td></tr>
+                <tr><td><strong>Example</strong></td><td>Ice melting, sugar dissolving</td><td>CaO + H₂O → Ca(OH)₂, burning wood</td></tr>
+              </tbody>
+            </table>
+            <table class="t-table" style="margin-top:.5rem">
+              <thead><tr><th></th><th>Exothermic</th><th>Endothermic</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Energy</strong></td><td>Released to surroundings (heats up)</td><td>Absorbed from surroundings (cools down)</td></tr>
+                <tr><td><strong>Example</strong></td><td>CaO + H₂O (quicklime + water) → steam + heat</td><td>Ammonium nitrate dissolving in water (cold pack)</td></tr>
+              </tbody>
+            </table>
+            <p>Adding water to quicklime: a <strong>new substance</strong> (Ca(OH)₂) forms AND <strong>significant heat is released</strong> → this is a <strong>Chemical change and Exothermic reaction ✓</strong></p>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t35">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">35</div>
+            <div class="topic-title">Alveoli &amp; Gas Exchange in the Respiratory System</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p><strong>Alveoli</strong> are microscopic, balloon-like air sacs clustered at the ends of bronchioles in the lungs. There are approximately <strong>480 million alveoli</strong> in each human lung, providing a total surface area of ~70 m² — equivalent to a tennis court.</p>
+            <h4>Gas Exchange by Diffusion</h4>
+            <table class="t-table">
+              <thead><tr><th>Gas</th><th>Direction</th><th>Reason</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Oxygen (O₂)</strong></td><td>Alveoli → Bloodstream</td><td>O₂ concentration is higher in alveoli than in blood; diffuses down gradient</td></tr>
+                <tr><td><strong>Carbon Dioxide (CO₂)</strong></td><td>Bloodstream → Alveoli</td><td>CO₂ concentration is higher in blood (from metabolism); diffuses into alveoli to be exhaled</td></tr>
+              </tbody>
+            </table>
+            <p>The alveoli's enormous surface area, ultra-thin walls (one cell thick), and rich blood supply make this exchange extremely rapid and efficient.</p>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /sec-block D -->
+
+    <!-- ══ SECTION E ══ -->
+    <div class="sec-block" id="secE">
+      <div class="sec-header">
+        <div class="sec-header-icon icon-red">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+        </div>
+        <div class="sec-header-text">
+          <div class="sec-eyebrow eb-red">Section E</div>
+          <h2>ICT &amp; English Language Proficiency</h2>
+          <p>Cloud computing models, grammar rules, passive voice, indirect speech, and modifiers</p>
+        </div>
+        <div class="sec-badge sb-red">5 Topics</div>
+      </div>
+      <div class="topics-list">
+
+        <div class="topic-card" id="t36">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">36</div>
+            <div class="topic-title">Cloud Service Models: IaaS, PaaS, SaaS, DaaS</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <table class="t-table">
+              <thead><tr><th>Model</th><th>Full Name</th><th>What Provider Gives</th><th>User Controls</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr><td><strong>IaaS</strong></td><td>Infrastructure as a Service</td><td>Servers, storage, networking hardware</td><td>OS, applications, data</td><td>Amazon EC2, Microsoft Azure</td></tr>
+                <tr><td><strong>PaaS</strong></td><td>Platform as a Service</td><td>Hardware + OS + development tools</td><td>Applications and data only</td><td>Google App Engine, Heroku</td></tr>
+                <tr><td><strong>SaaS</strong></td><td>Software as a Service</td><td>Complete working application via browser</td><td>Only your own data &amp; settings</td><td>Google Classroom, Microsoft 365, Gmail</td></tr>
+                <tr><td><strong>DaaS</strong></td><td>Database as a Service</td><td>Managed database infrastructure</td><td>Database contents</td><td>Amazon RDS, MongoDB Atlas</td></tr>
+              </tbody>
+            </table>
+            <p>A school accessing virtual classrooms <strong>directly over the web with no local software installation</strong> = <strong>SaaS</strong>. The complete application is delivered through the browser — no hardware or platform management required.</p>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t37">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">37</div>
+            <div class="topic-title">Subject-Verb Agreement with "Each" &amp; Indefinite Pronouns</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Certain <strong>indefinite pronouns</strong> are always singular and require a singular verb, even when followed by a phrase containing a plural noun:</p>
+            <div class="pills-row">
+              <span class="cpill red">each</span><span class="cpill red">every</span><span class="cpill red">either</span><span class="cpill red">neither</span><span class="cpill red">anyone</span><span class="cpill red">everyone</span><span class="cpill red">someone</span><span class="cpill red">nobody</span>
+            </div>
+            <div class="verdict no">
+              <div class="verdict-icon"><svg viewBox="0 0 10 10"><path d="M7.5 2.5l-5 5m5 0l-5-5" stroke="white" stroke-width="1.5" fill="none"/></svg></div>
+              <span>"Each of the candidate teachers <strong>have</strong> submitted their lesson plan." — WRONG</span>
+            </div>
+            <div class="verdict ok">
+              <div class="verdict-icon"><svg viewBox="0 0 10 10"><path d="M2 5.5l2 2 4-4-.7-.7L4 6.1 2.7 4.8z"/></svg></div>
+              <span>"Each of the candidate teachers <strong>has</strong> submitted their lesson plan." — CORRECT</span>
+            </div>
+            <div class="callout tip">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm-.5 6.5h1V5h-1v2.5zm0-3.5h1V3h-1v1z"/></svg></div>
+              <div class="callout-body"><strong>The Rule</strong>Ignore the "of the [plural noun]" prepositional phrase completely. The grammatical subject is "Each" — which is singular — so the verb must be singular (has, is, does).</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t38">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">38</div>
+            <div class="topic-title">Passive Voice Transformation — Simple Past Tense</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <div class="formula-box">Passive = Subject + was/were + Past Participle + by + Agent</div>
+            <p>Active: <em>"The principal <strong>gave</strong> the best teacher an award."</em></p>
+            <h4>Transformation Steps</h4>
+            <ul>
+              <li>Active verb "gave" (simple past) → Passive: <strong>was given</strong></li>
+              <li>Indirect object "the best teacher" becomes the passive subject</li>
+              <li>Active subject "the principal" becomes the agent: "by the principal"</li>
+            </ul>
+            <div class="verdict ok">
+              <div class="verdict-icon"><svg viewBox="0 0 10 10"><path d="M2 5.5l2 2 4-4-.7-.7L4 6.1 2.7 4.8z"/></svg></div>
+              <span>"The best teacher <strong>was given</strong> an award by the principal." ✓</span>
+            </div>
+            <div class="verdict no">
+              <div class="verdict-icon"><svg viewBox="0 0 10 10"><path d="M7.5 2.5l-5 5m5 0l-5-5" stroke="white" stroke-width="1.5" fill="none"/></svg></div>
+              <span>"The best teacher <strong>is given</strong> an award..." — Wrong tense (present, not past)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t39">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">39</div>
+            <div class="topic-title">Indirect / Reported Speech — Rules &amp; Backshift</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>Direct: <em>The teacher said, "You must complete this task today."</em></p>
+            <h4>Three Shift Rules</h4>
+            <table class="t-table">
+              <thead><tr><th>Element</th><th>Direct Speech</th><th>Indirect Speech</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Modal verb</strong></td><td>must</td><td>had to</td></tr>
+                <tr><td><strong>Pronoun</strong></td><td>you</td><td>I / he / she / they (context-dependent)</td></tr>
+                <tr><td><strong>Time word</strong></td><td>today</td><td>that day</td></tr>
+                <tr><td><strong>Demonstrative</strong></td><td>this</td><td>that</td></tr>
+              </tbody>
+            </table>
+            <div class="verdict ok">
+              <div class="verdict-icon"><svg viewBox="0 0 10 10"><path d="M2 5.5l2 2 4-4-.7-.7L4 6.1 2.7 4.8z"/></svg></div>
+              <span>"The teacher said that <strong>I had to</strong> complete <strong>that</strong> task <strong>that day</strong>." ✓</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="topic-card" id="t40">
+          <div class="topic-head" onclick="toggleTopic(this)">
+            <div class="topic-num">40</div>
+            <div class="topic-title">Dangling Modifiers — Identification &amp; Correction</div>
+            <div class="topic-arrow"><svg viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3"/></svg></div>
+          </div>
+          <div class="topic-body">
+            <p>A <strong>dangling modifier</strong> is a descriptive participial phrase at the start of a sentence whose implied subject does not match the grammatical subject of the main clause. The phrase "dangles" — it attaches to the wrong noun.</p>
+            <div class="verdict no">
+              <div class="verdict-icon"><svg viewBox="0 0 10 10"><path d="M7.5 2.5l-5 5m5 0l-5-5" stroke="white" stroke-width="1.5" fill="none"/></svg></div>
+              <span><em>"Having finished the lesson, <strong>the students</strong> were dismissed by the teacher."</em> — The phrase implies students finished the lesson, but it was the teacher who finished it. DANGLING. ✗</span>
+            </div>
+            <div class="verdict ok">
+              <div class="verdict-icon"><svg viewBox="0 0 10 10"><path d="M2 5.5l2 2 4-4-.7-.7L4 6.1 2.7 4.8z"/></svg></div>
+              <span><em>"Having finished the lesson, <strong>the teacher</strong> dismissed the students."</em> — "The teacher" immediately follows and is the one who finished the lesson. CORRECT. ✓</span>
+            </div>
+            <div class="callout tip">
+              <div class="callout-icon"><svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm-.5 6.5h1V5h-1v2.5zm0-3.5h1V3h-1v1z"/></svg></div>
+              <div class="callout-body"><strong>Quick Test</strong>Ask: "Who is doing the action in the opening phrase?" That person/thing must be the subject of the main clause. If it isn't — it's dangling.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /sec-block E -->
+
+  </main>
+</div><!-- /page-body -->
+
+<!-- FOOTER -->
+<div class="ft">
+  <span><strong>© Indus Testing Services</strong> — Official Study Material</span>
+  <div class="ft-center"><div class="ft-dot"></div>Teacher Education &amp; Pedagogy<div class="ft-dot"></div></div>
+  <span>Unauthorized reproduction strictly prohibited</span>
+</div>
+
+<!-- Back to top -->
+<div class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5m-7 7l7-7 7 7"/></svg>
+</div>
+
+<script>
+  // Toggle topic cards
+  function toggleTopic(headEl) {
+    const card = headEl.closest('.topic-card');
+    card.classList.toggle('open');
+  }
+
+  // Reading progress bar
+  const prog = document.getElementById('readProgress');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.body.scrollHeight - window.innerHeight;
+    prog.style.width = (scrolled / total * 100) + '%';
+
+    // Back to top
+    const bt = document.getElementById('backTop');
+    bt.classList.toggle('visible', scrolled > 400);
+
+    // Nav active state
+    const sections = ['secA','secB','secC','secD','secE'];
+    const navBtns = document.querySelectorAll('.nav-btn');
+    sections.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= 100 && rect.bottom > 100) {
+        navBtns.forEach(b => b.classList.remove('active'));
+        navBtns[i].classList.add('active');
+      }
+    });
+
+    // Sidebar active link
+    const allLinks = document.querySelectorAll('.sb-link');
+    allLinks.forEach(link => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      const r = target.getBoundingClientRect();
+      link.classList.toggle('active', r.top <= 120 && r.bottom > 80);
+    });
+  });
+
+  // Scroll to section
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Open first card of each section by default
+  document.querySelectorAll('.sec-block').forEach(block => {
+    const first = block.querySelector('.topic-card');
+    if (first) first.classList.add('open');
+  });
+</script>
+</body>
+</html>
