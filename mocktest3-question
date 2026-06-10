@@ -254,11 +254,9 @@
             <div class="logo-area">
                 <div class="logo-placeholder">
                     <!-- REPLACE WITH YOUR ACTUAL LOGO URL: 
-                         <img src="https://i.postimg.cc/your-actual-logo.png" alt="Indus Testing Services Logo"> 
+                         <img src="https://i.postimg.cc/J0rRwBkv/Chat-GPT-Image-May-21-2026-06-31-05-PM-removebg-preview.png" alt="Indus Testing Services Logo"> 
                          For now showing a modern abstract symbol -->
-                    <div class="logo-icon">📘⚙️</div>
-                    <!-- if you have the logo, replace the above div with <img src="your-logo-url" alt="Indus logo"> -->
-                </div>
+        
                 <div class="brand-text">
                     <h1>Indus Testing Services</h1>
                     <p>Assessment & Evaluation Division</p>
@@ -267,13 +265,13 @@
             <div class="exam-title">
                 <div class="badge">OFFICIAL QUESTION PAPER</div>
                 <h2>Teacher Education & Pedagogy<br>Mock Examination</h2>
-                <div class="meta">Total Questions: 40 | Max Marks: 100 | Time: 90 mins</div>
+                <div class="meta">Total Questions: 40 | Max Marks: 40 | Time: 50 mins</div>
             </div>
         </div>
     </div>
     <div class="instructions">
         <span>📌 All questions are compulsory.</span>
-        <span>✍️ Each question carries 2.5 marks.</span>
+        <span>✍️ Each question carries 1 marks.</span>
         <span>✅ Select the most appropriate option.</span>
     </div>
 
