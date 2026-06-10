@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Indus Testing Services - Model Question Paper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eef2f5;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+            color: #1e2a3e;
+        }
+
+        /* main paper container */
+        .paper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        /* modern header with branding */
+        .header {
+            background: linear-gradient(135deg, #0b2b3b 0%, #1a4a5f 100%);
+            padding: 1.8rem 2rem 1.5rem 2rem;
+            color: white;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.2rem 0.5rem 0.8rem;
+            border-radius: 60px;
+            backdrop-filter: blur(2px);
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .logo-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* fallback icon if logo missing */
+        .logo-icon {
+            font-size: 32px;
+        }
+
+        .brand-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.2rem;
+        }
+
+        .brand-text p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        .exam-title {
+            text-align: right;
+        }
+
+        .exam-title .badge {
+            background: #f4c542;
+            color: #1e2a3e;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.6rem;
+        }
+
+        .exam-title h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .exam-title .meta {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* instructions bar */
+        .instructions {
+            background: #f9fafc;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e2edf2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #2c5a6e;
+            font-weight: 500;
+        }
+
+        /* questions container */
+        .questions-container {
+            padding: 2rem 2rem 2.5rem 2rem;
+        }
+
+        .q-item {
+            margin-bottom: 1.8rem;
+            border-bottom: 1px solid #e9edf2;
+            padding-bottom: 1.2rem;
+            page-break-inside: avoid;
+        }
+
+        .q-num {
+            font-weight: 700;
+            font-size: 1rem;
+            background: #eef2fa;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 40px;
+            margin-right: 0.75rem;
+            color: #1e4663;
+        }
+
+        .q-text {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #0b2b3b;
+            display: inline;
+        }
+
+        .options {
+            margin-top: 0.7rem;
+            margin-left: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .option {
+            font-size: 0.92rem;
+            color: #2c3e4e;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .option-letter {
+            font-weight: 600;
+            min-width: 24px;
+            color: #1e6f5c;
+        }
+
+        /* footer */
+        .footer {
+            background: #f8fafd;
+            padding: 1.2rem 2rem;
+            border-top: 1px solid #e0eef4;
+            font-size: 0.75rem;
+            color: #5d7a8c;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 750px) {
+            .brand-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .exam-title {
+                text-align: left;
+                margin-top: 1rem;
+            }
+            .questions-container {
+                padding: 1.2rem;
+            }
+            .options {
+                margin-left: 1rem;
+            }
+            .q-num {
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .paper {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+            .header {
+                background: #0b2b3b;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .instructions {
+                background: #f9fafc;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .q-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="paper">
+    <div class="header">
+        <div class="brand-row">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <!-- REPLACE WITH YOUR ACTUAL LOGO URL: 
+                         <img src="https://i.postimg.cc/your-actual-logo.png" alt="Indus Testing Services Logo"> 
+                         For now showing a modern abstract symbol -->
+                    <div class="logo-icon">📘⚙️</div>
+                    <!-- if you have the logo, replace the above div with <img src="your-logo-url" alt="Indus logo"> -->
+                </div>
+                <div class="brand-text">
+                    <h1>Indus Testing Services</h1>
+                    <p>Assessment & Evaluation Division</p>
+                </div>
+            </div>
+            <div class="exam-title">
+                <div class="badge">OFFICIAL QUESTION PAPER</div>
+                <h2>Teacher Education & Pedagogy<br>Mock Examination</h2>
+                <div class="meta">Total Questions: 40 | Max Marks: 100 | Time: 90 mins</div>
+            </div>
+        </div>
+    </div>
+    <div class="instructions">
+        <span>📌 All questions are compulsory.</span>
+        <span>✍️ Each question carries 2.5 marks.</span>
+        <span>✅ Select the most appropriate option.</span>
+    </div>
+
+    <div class="questions-container">
+        <!-- Q1 -->
+        <div class="q-item"><div><span class="q-num">1</span><span class="q-text">A teacher wants to scaffold a reading task for a diverse group of middle school students using Vygotsky's Zone of Proximal Development (ZPD). Which of the following strategies represents the most effective application of this theory?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Assigning struggling readers to read independently at their current comfortable reading level without additional support.</div><div class="option"><span class="option-letter">B.</span> Pairing struggling readers with advanced peers to complete a task that is slightly above their current independent capability, with structured teacher prompts.</div><div class="option"><span class="option-letter">C.</span> Providing advanced readers with highly complex literature and leaving struggling readers to complete a basic vocabulary worksheet.</div><div class="option"><span class="option-letter">D.</span> Conducting a whole-class lecture where the teacher reads the text aloud without student interaction.</div></div></div>
+        <div class="q-item"><div><span class="q-num">2</span><span class="q-text">A high school physics teacher introduces the concept of structural forces by asking students to analyze abstract algebraic equations representing tension. Some students struggle because they are transitioning from Piaget's Concrete Operational stage to the Formal Operational stage. How should the teacher adapt the lesson?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Use physical spring scales and weights to visually demonstrate tension before shifting to abstract variables.</div><div class="option"><span class="option-letter">B.</span> Provide more complex algebraic formulas for independent homework practice to build abstract thinking.</div><div class="option"><span class="option-letter">C.</span> Ask students to memorize the equations and recall them in a written exam.</div><div class="option"><span class="option-letter">D.</span> Group students by their age and instruct only the older students while giving different tasks to the younger ones.</div></div></div>
+        <div class="q-item"><div><span class="q-num">3</span><span class="q-text">A middle school teacher observes that a 12-year-old student is highly anxious about group projects, constantly fearing criticism from peers, and showing signs of withdrawal. According to Erik Erikson's psychosocial theory, which stage's crisis is this student navigating?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Trust vs. Mistrust</div><div class="option"><span class="option-letter">B.</span> Autonomy vs. Shame and Doubt</div><div class="option"><span class="option-letter">C.</span> Industry vs. Inferiority</div><div class="option"><span class="option-letter">D.</span> Identity vs. Role Confusion</div></div></div>
+        <div class="q-item"><div><span class="q-num">4</span><span class="q-text">Under Abraham Maslow's Hierarchy of Needs, why is a school's free breakfast program considered a highly effective educational intervention?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> It directly increases students' test scores through nutritional intake alone.</div><div class="option"><span class="option-letter">B.</span> It addresses fundamental physiological needs, allowing students to focus on higher cognitive learning goals.</div><div class="option"><span class="option-letter">C.</span> It acts as an extrinsic behavioral motivator for student compliance.</div><div class="option"><span class="option-letter">D.</span> It serves as a tool for administrative discipline and transition monitoring.</div></div></div>
+        <div class="q-item"><div><span class="q-num">5</span><span class="q-text">A teacher wants to apply B.F. Skinner's operant conditioning to increase study habits. The teacher announces that any student who completes all homework early will have their lowest quiz score dropped. This is an example of:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Positive Reinforcement</div><div class="option"><span class="option-letter">B.</span> Negative Reinforcement</div><div class="option"><span class="option-letter">C.</span> Positive Punishment</div><div class="option"><span class="option-letter">D.</span> Negative Punishment</div></div></div>
+        <div class="q-item"><div><span class="q-num">6</span><span class="q-text">A student struggles with math but gains confidence and improves performance after watching the teacher walk through a difficult problem step-by-step while explaining their thinking. This process aligns with which learning framework?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Classical Conditioning (Pavlov)</div><div class="option"><span class="option-letter">B.</span> Cognitive Disequilibrium (Piaget)</div><div class="option"><span class="option-letter">C.</span> Observational Learning and Modeling (Bandura)</div><div class="option"><span class="option-letter">D.</span> Discovery Learning (Bruner)</div></div></div>
+        <div class="q-item"><div><span class="q-num">7</span><span class="q-text">During a cooperative group activity, a teacher simultaneously monitors a group in the corner, redirects two off-task students in the back with a gesture, and answers a question from a student nearby. According to Jacob Kounin, this teacher is demonstrating:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Withitness</div><div class="option"><span class="option-letter">B.</span> Overlappingness</div><div class="option"><span class="option-letter">C.</span> Momentum</div><div class="option"><span class="option-letter">D.</span> Smoothness</div></div></div>
+        <div class="q-item"><div><span class="q-num">8</span><span class="q-text">A teacher notices a student has arrived late for the third time this week. Using the Canter Model of Assertive Discipline, how should the teacher respond?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Scold the student loudly in front of the class to set a public example.</div><div class="option"><span class="option-letter">B.</span> State the rule and the pre-established consequence calmly, firmly, and consistently without arguing.</div><div class="option"><span class="option-letter">C.</span> Ignore the lateness to preserve the warm climate of the classroom.</div><div class="option"><span class="option-letter">D.</span> Keep the student outside the classroom for the remainder of the period.</div></div></div>
+        <div class="q-item"><div><span class="q-num">9</span><span class="q-text">A student is persistently off-task, playing with a small toy under their desk during a lecture. What is the most pedagogical first action for the teacher to take?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Confiscate the toy immediately and shout at the student.</div><div class="option"><span class="option-letter">B.</span> Quietly walk near the student's desk while continuing to speak to the class.</div><div class="option"><span class="option-letter">C.</span> Send the student to the vice principal's office immediately.</div><div class="option"><span class="option-letter">D.</span> Stop the lecture and demand that the student explain what they are doing.</div></div></div>
+        <div class="q-item"><div><span class="q-num">10</span><span class="q-text">Which of the following is the most effective way for an elementary school teacher to establish classroom rules at the start of the academic year?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Hand out a long, pre-printed list of 20 negative behaviors that will result in immediate detention.</div><div class="option"><span class="option-letter">B.</span> Collaborate with students to draft 3-5 positively stated rules and discuss what they look like in practice.</div><div class="option"><span class="option-letter">C.</span> Allow students complete freedom without rules to foster a creative environment.</div><div class="option"><span class="option-letter">D.</span> Post rules on the wall on the first day without explanation and expect obedience.</div></div></div>
+        <div class="q-item"><div><span class="q-num">11</span><span class="q-text">To minimize idle time and behavioral distractions during transitions, a teacher should design:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Long rest periods where students can talk freely.</div><div class="option"><span class="option-letter">B.</span> Structured 'Anchor Activities' that students can start automatically when they finish their primary task.</div><div class="option"><span class="option-letter">C.</span> Strict silent sitting requirements with no tasks assigned.</div><div class="option"><span class="option-letter">D.</span> Extra homework drills that are collected at the end of the day.</div></div></div>
+        <div class="q-item"><div><span class="q-num">12</span><span class="q-text">A teacher wants to rearrange the classroom desks to support student-led discussions and cooperative peer dialogue. Which physical layout is best suited for this goal?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Desks arranged in straight, traditional rows facing the board.</div><div class="option"><span class="option-letter">B.</span> Desks grouped into modular clusters (seating pods).</div><div class="option"><span class="option-letter">C.</span> Desks arranged in a strict stadium seating layout.</div><div class="option"><span class="option-letter">D.</span> Desks facing the walls with the center of the room empty.</div></div></div>
+        <div class="q-item"><div><span class="q-num">13</span><span class="q-text">Before starting a reading unit, a teacher administers a brief, un-graded phonics check to identify which students lack foundational decoding skills. This is an example of a:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Summative Assessment</div><div class="option"><span class="option-letter">B.</span> Formative Assessment</div><div class="option"><span class="option-letter">C.</span> Diagnostic Assessment</div><div class="option"><span class="option-letter">D.</span> Placement Assessment</div></div></div>
+        <div class="q-item"><div><span class="q-num">14</span><span class="q-text">When assessing a complex, multi-step science project, which type of rubric should a teacher use to provide detailed, targeted feedback on individual criteria like 'data analysis' and 'scientific accuracy'?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Holistic Rubric</div><div class="option"><span class="option-letter">B.</span> Analytic Rubric</div><div class="option"><span class="option-letter">C.</span> Checklist Rubric</div><div class="option"><span class="option-letter">D.</span> Single-Point Rubric</div></div></div>
+        <div class="q-item"><div><span class="q-num">15</span><span class="q-text">A teacher is drafting learning objectives for a civic education unit. One objective states: 'Students will display a consistent commitment to democratic values by volunteering in local community cleanup drives.' Which level of Krathwohl's Affective Domain does this objective target?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Receiving</div><div class="option"><span class="option-letter">B.</span> Responding</div><div class="option"><span class="option-letter">C.</span> Valuing</div><div class="option"><span class="option-letter">D.</span> Organizing</div></div></div>
+        <div class="q-item"><div><span class="q-num">16</span><span class="q-text">In a laboratory class, a chemistry student can independently and accurately perform a complex titration process without following written step-by-step instructions. According to Dave's Psychomotor Domain, this student has reached the level of:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Imitation</div><div class="option"><span class="option-letter">B.</span> Manipulation</div><div class="option"><span class="option-letter">C.</span> Precision</div><div class="option"><span class="option-letter">D.</span> Articulation</div></div></div>
+        <div class="q-item"><div><span class="q-num">17</span><span class="q-text">In an item analysis of a multiple-choice question, the upper 27% of the class got the item correct, while only the lower 27% of the class got it correct. If the item difficulty index is p = 0.50, what does this indicate about the item's discrimination index (d)?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> The item has a positive discrimination index (d = +0.50).</div><div class="option"><span class="option-letter">B.</span> The item has a discrimination index of 0.00, meaning it fails to differentiate between high and low-achieving students.</div><div class="option"><span class="option-letter">C.</span> The item has a negative discrimination index (d = -0.50).</div><div class="option"><span class="option-letter">D.</span> The item is perfectly constructed and requires no revisions.</div></div></div>
+        <div class="q-item"><div><span class="q-num">18</span><span class="q-text">A school enforces strict rules about punctuality, standing in line, and raising hands before speaking. While these are not academic subjects, students learn compliance and respect for authority. This is a classic example of:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> The Hidden Curriculum</div><div class="option"><span class="option-letter">B.</span> The Formal Curriculum</div><div class="option"><span class="option-letter">C.</span> The Extra-Curricular Program</div><div class="option"><span class="option-letter">D.</span> Differentiated Instruction</div></div></div>
+        <div class="q-item"><div><span class="q-num">19</span><span class="q-text">A teacher-licensing exam is designed to verify whether candidates meet a predefined, baseline standard of professional competence. This type of test is classified as a:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Norm-Referenced Test</div><div class="option"><span class="option-letter">B.</span> Criterion-Referenced Test</div><div class="option"><span class="option-letter">C.</span> Diagnostic Test</div><div class="option"><span class="option-letter">D.</span> Formative Test</div></div></div>
+        <div class="q-item"><div><span class="q-num">20</span><span class="q-text">A teacher asks students to write a brief reflection at the end of a project detailing how they solved problems, what they would change next time, and how their understanding of the topic has shifted. This practice promotes:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Rote Memorization</div><div class="option"><span class="option-letter">B.</span> Extrinsic Motivation</div><div class="option"><span class="option-letter">C.</span> Metacognition</div><div class="option"><span class="option-letter">D.</span> Teacher-Centred Learning</div></div></div>
+        <div class="q-item"><div><span class="q-num">21</span><span class="q-text">Which Article of the 1973 Constitution of Pakistan guarantees free and compulsory education as a fundamental right for all children aged five to sixteen years?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Article 19-A</div><div class="option"><span class="option-letter">B.</span> Article 25-A</div><div class="option"><span class="option-letter">C.</span> Article 38</div><div class="option"><span class="option-letter">D.</span> Article 45</div></div></div>
+        <div class="q-item"><div><span class="q-num">22</span><span class="q-text">In pre-partition history, what was the primary constitutional difference between the Nehru Report (1928) and Quaid-e-Azam's Fourteen Points (1929)?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> The Nehru Report demanded a separate homeland for Muslims, while the Fourteen Points supported a unified India.</div><div class="option"><span class="option-letter">B.</span> The Nehru Report advocated for a strong unitary center with residual powers held by the center, whereas the Fourteen Points demanded a federal system with residual powers vested in the provinces.</div><div class="option"><span class="option-letter">C.</span> The Nehru Report rejected joint electorates, whereas the Fourteen Points completely accepted them.</div><div class="option"><span class="option-letter">D.</span> The Nehru Report supported complete provincial autonomy, while the Fourteen Points proposed central authority over all local issues.</div></div></div>
+        <div class="q-item"><div><span class="q-num">23</span><span class="q-text">The Indus River Delta, located in the southern region of Sindh, is ecologically and globally significant primarily due to its:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Rich oil reserves discovered underneath its deep-sea silt.</div><div class="option"><span class="option-letter">B.</span> Large-scale mangrove forests which act as a barrier against sea intrusion and support marine biodiversity.</div><div class="option"><span class="option-letter">C.</span> Highly elevated mountain peaks suitable for hydroelectric power dams.</div><div class="option"><span class="option-letter">D.</span> Desert climate suitable for dry-dock shipping operations.</div></div></div>
+        <div class="q-item"><div><span class="q-num">24</span><span class="q-text">Which of the following describes the primary agricultural challenge faced in the arid and semi-arid plains of Pakistan?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Severe lack of fertile alluvial soils across the major river basins.</div><div class="option"><span class="option-letter">B.</span> Waterlogging and salinity caused by poor drainage and high evaporation rates in canal irrigation networks.</div><div class="option"><span class="option-letter">C.</span> Extremely low temperatures that freeze agricultural land for six months.</div><div class="option"><span class="option-letter">D.</span> Complete absence of freshwater rivers crossing through the plains.</div></div></div>
+        <div class="q-item"><div><span class="q-num">25</span><span class="q-text">The ancient archaeological site of Kot Diji, which pre-dates the mature phase of Mohenjo-daro, is located in which district of Sindh?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Larkana District</div><div class="option"><span class="option-letter">B.</span> Sukkur District</div><div class="option"><span class="option-letter">C.</span> Khairpur District</div><div class="option"><span class="option-letter">D.</span> Hyderabad District</div></div></div>
+        <div class="q-item"><div><span class="q-num">26</span><span class="q-text">The Last Sermon (Khutbah Hajjat-ul-Wida) of Prophet Muhammad (PBUH) is highly celebrated globally primarily because it established:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> A system of complex international trade tariff rules.</div><div class="option"><span class="option-letter">B.</span> A universal declaration of human rights, affirming the absolute equality of all human beings regardless of race or color.</div><div class="option"><span class="option-letter">C.</span> Specific rules for maritime borders and trade navigation.</div><div class="option"><span class="option-letter">D.</span> The blueprint for military defense tactics in desert regions.</div></div></div>
+        <div class="q-item"><div><span class="q-num">27</span><span class="q-text">Which of the following statements accurately describes the structural setup of SAARC (South Asian Association for Regional Cooperation), of which Pakistan is a founding member?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> It is a strict military defense alliance modeling NATO.</div><div class="option"><span class="option-letter">B.</span> It is a regional platform designed to promote economic growth, social progress, and cultural development among South Asian nations.</div><div class="option"><span class="option-letter">C.</span> It is a global currency regulatory agency managing South Asian reserves.</div><div class="option"><span class="option-letter">D.</span> It is a judicial body managing direct bilateral boundary disputes.</div></div></div>
+        <div class="q-item"><div><span class="q-num">28</span><span class="q-text">How did the 18th Constitutional Amendment (passed in 2010) structurally reform the management of education in Pakistan?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> It centralized all educational curriculum design under a singular federal directorate in Islamabad.</div><div class="option"><span class="option-letter">B.</span> It completely devolved the subject of education, including curriculum design and textbook production, to the provincial governments.</div><div class="option"><span class="option-letter">C.</span> It made university education completely private and market-driven.</div><div class="option"><span class="option-letter">D.</span> It abolished all local school management committees.</div></div></div>
+        <div class="q-item"><div><span class="q-num">29</span><span class="q-text">A physical education teacher wants to measure the running distance around a semi-circular track. If the radius of the semi-circular curve is r = 7 meters, what is the exact perimeter of this semi-circular track? (Use π ≈ 22/7)</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> 22 meters</div><div class="option"><span class="option-letter">B.</span> 29 meters</div><div class="option"><span class="option-letter">C.</span> 36 meters</div><div class="option"><span class="option-letter">D.</span> 44 meters</div></div></div>
+        <div class="q-item"><div><span class="q-num">30</span><span class="q-text">A school's enrollment increased from 400 to 480 students, but later decreased by 10% due to migration. What was the net percentage increase in school enrollment from the original baseline of 400?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> 6%</div><div class="option"><span class="option-letter">B.</span> 8%</div><div class="option"><span class="option-letter">C.</span> 10%</div><div class="option"><span class="option-letter">D.</span> 12%</div></div></div>
+        <div class="q-item"><div><span class="q-num">31</span><span class="q-text">If 12 teachers can grade a batch of board exam papers in 4 hours, how many hours will 8 teachers take to grade the exact same batch of papers at the same working pace?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> 3 hours</div><div class="option"><span class="option-letter">B.</span> 5 hours</div><div class="option"><span class="option-letter">C.</span> 6 hours</div><div class="option"><span class="option-letter">D.</span> 8 hours</div></div></div>
+        <div class="q-item"><div><span class="q-num">32</span><span class="q-text">An educational game requires rolling two standard six-sided fair dice. What is the mathematical probability that the sum of the two numbers rolled is exactly 9?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> 1/6</div><div class="option"><span class="option-letter">B.</span> 1/9</div><div class="option"><span class="option-letter">C.</span> 1/12</div><div class="option"><span class="option-letter">D.</span> 5/36</div></div></div>
+        <div class="q-item"><div><span class="q-num">33</span><span class="q-text">The temperature of the atmosphere decreases with altitude in the troposphere, but increases with altitude in the stratosphere. Why does the stratosphere experience this warming effect?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Because it is closer to the molten core of the Earth.</div><div class="option"><span class="option-letter">B.</span> Because the ozone layer (O₃) concentrated in the stratosphere absorbs high-energy ultraviolet (UV) radiation from the sun.</div><div class="option"><span class="option-letter">C.</span> Because greenhouse gases settle primarily in this layer.</div><div class="option"><span class="option-letter">D.</span> Because of constant volcanic activity in the upper atmosphere.</div></div></div>
+        <div class="q-item"><div><span class="q-num">34</span><span class="q-text">A teacher demonstrates a science experiment by adding water to quicklime (calcium oxide, CaO). The mixture bubbles, produces steam, and turns into slaked lime (Ca(OH)₂), generating significant heat. What type of change and reaction is this?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Physical change and endothermic reaction.</div><div class="option"><span class="option-letter">B.</span> Physical change and exothermic reaction.</div><div class="option"><span class="option-letter">C.</span> Chemical change and endothermic reaction.</div><div class="option"><span class="option-letter">D.</span> Chemical change and exothermic reaction.</div></div></div>
+        <div class="q-item"><div><span class="q-num">35</span><span class="q-text">Within the human respiratory system, what is the primary physiological function of the microscopic air sacs known as alveoli?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> To filter out dust particles and pathogens using fine hair-like structures.</div><div class="option"><span class="option-letter">B.</span> To serve as the primary site for gas exchange, allowing oxygen to enter and carbon dioxide to exit the bloodstream.</div><div class="option"><span class="option-letter">C.</span> To digest microscopic food particles entering the throat.</div><div class="option"><span class="option-letter">D.</span> To pump oxygenated blood to peripheral muscle groups.</div></div></div>
+        <div class="q-item"><div><span class="q-num">36</span><span class="q-text">An educational institution adopts a cloud-based software service where teachers can access and use virtual classrooms directly over the web without installing any software locally. This cloud service model is classified as:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> IaaS (Infrastructure as a Service)</div><div class="option"><span class="option-letter">B.</span> PaaS (Platform as a Service)</div><div class="option"><span class="option-letter">C.</span> SaaS (Software as a Service)</div><div class="option"><span class="option-letter">D.</span> DaaS (Database as a Service)</div></div></div>
+        <div class="q-item"><div><span class="q-num">37</span><span class="q-text">Choose the sentence that represents correct standard English subject-verb agreement:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Each of the candidate teachers have submitted their lesson plan.</div><div class="option"><span class="option-letter">B.</span> Each of the candidate teachers has submitted their lesson plan.</div><div class="option"><span class="option-letter">C.</span> Each of the candidate teachers are submitting their lesson plan.</div><div class="option"><span class="option-letter">D.</span> Each of the candidate teachers were submitting their lesson plan.</div></div></div>
+        <div class="q-item"><div><span class="q-num">38</span><span class="q-text">Which of the following is the grammatically correct passive voice transformation of: 'The principal gave the best teacher an award.'?</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> The best teacher is given an award by the principal.</div><div class="option"><span class="option-letter">B.</span> The best teacher was given an award by the principal.</div><div class="option"><span class="option-letter">C.</span> An award is given by the principal to the best teacher.</div><div class="option"><span class="option-letter">D.</span> The principal was given an award by the best teacher.</div></div></div>
+        <div class="q-item"><div><span class="q-num">39</span><span class="q-text">Convert the direct speech into indirect speech: The teacher said, 'You must complete this task today.'</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> The teacher said that you must complete this task today.</div><div class="option"><span class="option-letter">B.</span> The teacher said that I had to complete that task that day.</div><div class="option"><span class="option-letter">C.</span> The teacher said that I must complete this task today.</div><div class="option"><span class="option-letter">D.</span> The teacher said that you have to complete that task today.</div></div></div>
+        <div class="q-item"><div><span class="q-num">40</span><span class="q-text">Identify the sentence that represents correct standard English sentence structure and avoids dangling modifiers:</span></div><div class="options"><div class="option"><span class="option-letter">A.</span> Having finished the lesson, the students were dismissed by the teacher.</div><div class="option"><span class="option-letter">B.</span> Having finished the lesson, the teacher dismissed the students.</div><div class="option"><span class="option-letter">C.</span> Finishing the lesson, the class was dismissed by the teacher.</div><div class="option"><span class="option-letter">D.</span> Finishes the lesson, the teacher dismissed the students.</div></div></div>
+    </div>
+
+    <div class="footer">
+        <span>© Indus Testing Services — Official assessment material</span>
+        <span>✧ Quality assurance in education ✧</span>
+    </div>
+</div>
+</body>
+</html>
