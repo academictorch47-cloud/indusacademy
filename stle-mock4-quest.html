@@ -1,1 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indus Testing Services — Sindh Teaching License Exam Mock Tests 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --ink:       #0d1f2d;
+      --ink-mid:   #2e4a5a;
+      --ink-soft:  #5a7a8a;
+      --paper:     #fafcfe;
+      --rule:      #dce8ef;
+      --gold:      #b8922a;
+      --gold-lt:   #f5e6c0;
+      --teal:      #1b7a6e;
+      --teal-lt:   #e3f4f2;
+      --accent:    #0e4d6e;
+      --accent-lt: #e5f0f7;
+      --white:     #ffffff;
+      --shadow:    0 2px 24px rgba(13,31,45,.09), 0 1px 4px rgba(13,31,45,.06);
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      background: #e8edf2;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 2.5rem 1rem 3rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── SHEET ─────────────────────────────────────── */
+    .sheet {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 4px;
+      box-shadow: var(--shadow), 0 0 0 1px rgba(13,31,45,.06);
+      overflow: hidden;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────── */
+    .hd {
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hd::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 120% at 80% 50%, rgba(30,90,120,.35) 0%, transparent 70%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 28px,
+          rgba(255,255,255,.025) 28px,
+          rgba(255,255,255,.025) 29px
+        );
+      pointer-events: none;
+    }
+
+    .hd-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem 2.2rem 1.8rem;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+
+    .logo-ring {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 3px rgba(184,146,42,.3), 0 4px 14px rgba(0,0,0,.3);
+    }
+
+    .logo-ring svg { width: 28px; height: 28px; fill: var(--ink); }
+
+    .brand-text { color: var(--white); }
+    .brand-text h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -.2px;
+      line-height: 1.15;
+    }
+    .brand-text p {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-top: .25rem;
+    }
+
+    .exam-meta { text-align: right; color: var(--white); }
+
+    .badge-official {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: .28rem .85rem;
+      border-radius: 2px;
+      margin-bottom: .6rem;
+    }
+
+    .exam-meta h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--white);
+    }
+
+    .exam-meta .meta-pills {
+      display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .45rem;
+      margin-top: .75rem;
+    }
+
+    .meta-pill {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.85);
+      font-size: .7rem;
+      font-weight: 500;
+      padding: .22rem .7rem;
+      border-radius: 100px;
+    }
+
+    .hd-rule {
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold) 0%, #e0b84a 50%, transparent 100%);
+    }
+
+    /* ─── INSTRUCTIONS BAR ───────────────────────────── */
+    .instructions {
+      background: var(--accent-lt);
+      border-bottom: 1px solid var(--rule);
+      padding: .75rem 2.2rem;
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      font-size: .75rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: .01em;
+    }
+
+    .inst-item { display: flex; align-items: center; gap: .4rem; }
+
+    .inst-icon {
+      width: 18px; height: 18px; flex-shrink: 0;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .inst-icon svg { width: 10px; height: 10px; fill: white; }
+
+    /* ─── SECTION LABEL ──────────────────────────────── */
+    .section-label {
+      padding: 1.4rem 2.2rem .5rem;
+      display: flex; align-items: center; gap: .75rem;
+    }
+
+    .section-label .sl-bar {
+      width: 4px; height: 22px; background: var(--gold); border-radius: 2px; flex-shrink: 0;
+    }
+
+    .section-label h3 {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .section-label span {
+      font-size: .7rem;
+      color: var(--ink-soft);
+      font-weight: 400;
+      margin-left: .3rem;
+      letter-spacing: .05em;
+    }
+
+    /* ─── QUESTIONS ──────────────────────────────────── */
+    .questions {
+      padding: .5rem 2.2rem 2rem;
+    }
+
+    .q {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .q:last-child { border-bottom: none; }
+
+    .q-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+    }
+
+    .q-num {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: .7rem;
+      font-weight: 700;
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: .1rem;
+      letter-spacing: -.01em;
+    }
+
+    .q-body { flex: 1; min-width: 0; }
+
+    .q-text {
+      font-size: .915rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .opts {
+      margin-top: .75rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .35rem .9rem;
+    }
+
+    .opt {
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+      font-size: .825rem;
+      color: var(--ink-mid);
+      line-height: 1.45;
+      padding: .3rem .5rem .3rem .4rem;
+      border-radius: 4px;
+      transition: background .15s;
+    }
+
+    .opt:hover { background: var(--teal-lt); }
+
+    .opt-letter {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border: 1.5px solid var(--rule);
+      border-radius: 50%;
+      font-size: .68rem;
+      font-weight: 700;
+      color: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      margin-top: .1rem;
+    }
+
+    .opt-text { flex: 1; }
+
+    .opts.single-col {
+      grid-template-columns: 1fr;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    .ft {
+      background: var(--ink);
+      color: rgba(255,255,255,.45);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+      gap: .5rem;
+      padding: .85rem 2.2rem;
+      font-size: .68rem;
+      letter-spacing: .04em;
+    }
+
+    .ft strong { color: rgba(255,255,255,.7); font-weight: 600; }
+
+    .ft-center {
+      display: flex; align-items: center; gap: .5rem;
+      color: var(--gold);
+      font-weight: 500;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .ft-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 640px) {
+      body { padding: 0; }
+      .sheet { border-radius: 0; box-shadow: none; }
+      .hd-inner { grid-template-columns: 1fr; }
+      .exam-meta { text-align: left; }
+      .exam-meta .meta-pills { justify-content: flex-start; }
+      .opts { grid-template-columns: 1fr; }
+      .questions { padding: .5rem 1.2rem 1.5rem; }
+      .hd-inner { padding: 1.4rem 1.2rem; }
+      .instructions { padding: .75rem 1.2rem; }
+      .section-label { padding: 1rem 1.2rem .4rem; }
+      .ft { padding: .75rem 1.2rem; }
+    }
+
+    /* ─── PRINT ──────────────────────────────────────── */
+    @media print {
+      body { background: white; padding: 0; }
+      .sheet { box-shadow: none; border-radius: 0; max-width: 100%; }
+      .hd { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .hd::before { display: none; }
+      .instructions { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .q { break-inside: avoid; }
+      .opt:hover { background: transparent; }
+    }
+  </style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- HEADER -->
+  <div class="hd">
+    <div class="hd-inner">
+      <div class="brand-lockup">
+        <div class="logo-ring">
+          <!-- Indus / river symbol -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C7.03 2 3 6.03 3 11c0 2.97 1.39 5.61 3.55 7.3L4 22h4l1.6-2.13A8.91 8.91 0 0 0 12 20a8.95 8.95 0 0 0 2.4-.13L16 22h4l-2.55-3.7A8.97 8.97 0 0 0 21 11c0-4.97-4.03-9-9-9zm0 2a7 7 0 0 1 7 7c0 1.73-.63 3.31-1.67 4.53-.36-.85-.89-1.75-1.58-2.53C14.34 11.3 13.2 10.5 12 10c-1.2.5-2.34 1.3-3.75 3-.69.78-1.22 1.68-1.58 2.53A6.97 6.97 0 0 1 5 11a7 7 0 0 1 7-7zm0 8c.85.35 1.76 1.05 2.85 2.3.48.55.9 1.13 1.24 1.7A6.95 6.95 0 0 1 12 18a6.95 6.95 0 0 1-4.09-1-.3 5.62 5.62 0 0 1 1.24-1.7C10.24 14.05 11.15 13.35 12 13z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>Indus Testing Services</h1>
+          <p>Assessment &amp; Evaluation Division</p>
+        </div>
+      </div>
+
+      <div class="exam-meta">
+        <div class="badge-official">Official Question Paper</div>
+        <h2> Sindh Teaching License Exam Mock Tests Series - Test - 01</h2>
+        <div class="meta-pills">
+          <span class="meta-pill">40 Questions</span>
+          <span class="meta-pill">40 Marks</span>
+          <span class="meta-pill">50 Minutes</span>
+        </div>
+      </div>
+    </div>
+    <div class="hd-rule"></div>
+  </div>
+
+  <!-- INSTRUCTIONS -->
+  <div class="instructions">
+    <div class="inst-item">
+      <div class="inst-icon">
+        <svg viewBox="0 0 10 10"><path d="M5 1a4 4 0 1 1 0 8A4 4 0 0 1 5 1zm0 1.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM4.5 5v3h1V5h-1z"/></svg>
+      </div>
+      All questions are compulsory
+    </div>
+    <div class="inst-item">
+      <div class="inst-icon">
+        <svg viewBox="0 0 10 10"><path d="M2 5.5l2 2 4-4-.7-.7L4 6.1 2.7 4.8z"/></svg>
+      </div>
+      Each question carries 1 mark
+    </div>
+    <div class="inst-item">
+      <div class="inst-icon">
+        <svg viewBox="0 0 10 10"><path d="M1 2h8v1H1zm0 2.5h8v1H1zM1 7h5v1H1z"/></svg>
+      </div>
+      Select the most appropriate option
+    </div>
+    <div class="inst-item">
+      <div class="inst-icon">
+        <svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.5" stroke="white" stroke-width="1" fill="none"/><path d="M5 3.5v2l1.25 1.25-.7.7-1.55-1.55V3.5z"/></svg>
+      </div>
+      No negative marking
+    </div>
+  </div>
+
+  <!-- ── SECTION A ── -->
+  <div class="section-label">
+    <div class="sl-bar"></div>
+    <h3>Section A <span>— Language &amp; Grammar</span></h3>
+  </div>
+
+  <div class="questions">
+
+    <!-- Q1 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">1</div>
+        <div class="q-body">
+          <div class="q-text">Choose the grammatically correct sentence that displays proper subject-verb agreement with a collective noun:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">The committee of expert teachers are divided in their opinions on the curriculum.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">The committee of expert teachers is divided in their opinions on the curriculum.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">The committee of expert teachers were divided in their opinions on the curriculum.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">The committee of expert teachers has divided in their opinions on the curriculum.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">2</div>
+        <div class="q-body">
+          <div class="q-text">Convert the direct speech to indirect speech: The principal said to the candidate, "You may join the school next week."</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">The principal told the candidate that he may join the school the following week.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">The principal told the candidate that he might join the school next week.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">The principal told the candidate that he might join the school the following week.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">The principal asked the candidate if he might join the school next week.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">3</div>
+        <div class="q-body">
+          <div class="q-text">What is the grammatically correct passive voice conversion of: "I expect him to finish the project today."</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">I expect the project to be finished by him today.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">He is expected to finish the project today by me.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">The project is expected to be finished by him today.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">He is expected to be finished the project today.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">4</div>
+        <div class="q-body">
+          <div class="q-text">What is the antonym of the word "Ambiguous"?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Vague</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Clear</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Ephemeral</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Equivocal</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions -->
+
+  <!-- ── SECTION B ── -->
+  <div class="section-label">
+    <div class="sl-bar"></div>
+    <h3>Section B <span>— Mathematics &amp; Logical Reasoning</span></h3>
+  </div>
+
+  <div class="questions">
+
+    <!-- Q5 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">5</div>
+        <div class="q-body">
+          <div class="q-text">Two trains start at the same time from Karachi and Lahore, which are 1200 km apart, traveling toward each other. Train A travels at a speed of 70 km/h and Train B at 50 km/h. After how many hours will they cross each other?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">8 hours</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">10 hours</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">12 hours</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">15 hours</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">6</div>
+        <div class="q-body">
+          <div class="q-text">A school library bought a set of books for Rs. 5,000 and later sold them to students at a loss of 15%. What was the selling price of the books?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Rs. 4,150</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Rs. 4,250</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Rs. 4,500</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Rs. 4,750</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">7</div>
+        <div class="q-body">
+          <div class="q-text">A physical education teacher wants to fence a circular sports field. If the total area of the circular field is 154 square meters, what is the radius of the field? (Use π≈ 22/7)</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">3.5 meters</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">7 meters</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">14 meters</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">21 meters</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">8</div>
+        <div class="q-body">
+          <div class="q-text">Identify the next number in the logical analytical sequence: 3,7,15,31,63,?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">121</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">125</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">127</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">129</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions -->
+
+  <!-- ── SECTION C ── -->
+  <div class="section-label">
+    <div class="sl-bar"></div>
+    <h3>Section C <span>— Science &amp; Environment</span></h3>
+  </div>
+
+  <div class="questions">
+
+    <!-- Q9 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">9</div>
+        <div class="q-body">
+          <div class="q-text">Which of the following pairs of gases are primarily responsible for the formation of acid rain in industrialised environments?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">CO₂ and CH₄</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">SO₂ and NO₂</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">O₃ and CFCs</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">CO and H₂O</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">10</div>
+        <div class="q-body">
+          <div class="q-text">A teacher drops a tennis ball and a heavy steel ball from the third-story window of a school building simultaneously in a vacuum chamber. Which of the following statements is physically correct?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">The steel ball hits the ground first because of its greater mass.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">The tennis ball hits the ground first due to less air drag.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Both balls hit the ground at the exact same time because acceleration due to gravity is independent of mass.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Neither ball falls because gravity does not operate inside a vacuum.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">11</div>
+        <div class="q-body">
+          <div class="q-text">Within the human circulatory system, what is the primary structural difference between arteries and veins?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Arteries carry oxygen-poor blood, while veins carry oxygen-rich blood.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Arteries have thin, highly elastic walls, whereas veins have thick, rigid muscular walls.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Arteries contain internal one-way valves to prevent backflow, while veins completely lack valves.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Arteries have thick, muscular walls to withstand high blood pressure, while veins have thinner walls and contain internal valves to prevent backflow.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions -->
+
+  <!-- ── SECTION D ── -->
+  <div class="section-label">
+    <div class="sl-bar"></div>
+    <h3>Section D <span>— ICT &amp; Computer Security</span></h3>
+  </div>
+
+  <div class="questions">
+
+    <!-- Q12 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">12</div>
+        <div class="q-body">
+          <div class="q-text">Which of the following computer security mechanisms is designed specifically to monitor incoming and outgoing network traffic and block unauthorized access based on predefined rules?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Antivirus</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Firewall</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Encryption Key</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Spyware</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions -->
+
+  <!-- ── SECTION E ── -->
+  <div class="section-label">
+    <div class="sl-bar"></div>
+    <h3>Section E <span>— Pakistan Studies, Civics &amp; General Knowledge</span></h3>
+  </div>
+
+  <div class="questions">
+
+    <!-- Q13 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">13</div>
+        <div class="q-body">
+          <div class="q-text">How did the 18th Constitutional Amendment (2010) fundamentally impact the provincial administration of Sindh regarding education?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">It centralized educational policymaking in Islamabad under a single federal framework.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">It abolished the Concurrent Legislative List, devolving full legislative and curriculum authority to the provinces.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">It mandated that all private schools be fully funded by federal grants.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">It made all university administrative bodies answerable to local district courts.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">14</div>
+        <div class="q-body">
+          <div class="q-text">In Quaid-e-Azam's Fourteen Points (1929), what was the primary constitutional demand regarding the separation of territories?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">The separation of Bengal from Bihar</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">The separation of Sindh from the Bombay Presidency</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">The separation of Balochistan from the Punjab province</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">The separation of Kashmir from the Northern Areas</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">15</div>
+        <div class="q-body">
+          <div class="q-text">The historic site of Mohenjo-daro belongs to which phase of the Indus Valley Civilization?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Early Harappan Phase</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Mature Harappan Phase</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Late Harappan Phase</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Post-Harappan Phase</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">16</div>
+        <div class="q-body">
+          <div class="q-text">Which regional international organization, founded with Pakistan as a core member, aims to promote economic, scientific, and cultural cooperation among South Asian countries?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">OIC (Organization of Islamic Cooperation)</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">SAARC (South Asian Association for Regional Cooperation)</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">ECO (Economic Cooperation Organization)</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">SCO (Shanghai Cooperation Organization)</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions -->
+
+  <!-- ── SECTION F ── -->
+  <div class="section-label">
+    <div class="sl-bar"></div>
+    <h3>Section F <span>— Educational Psychology &amp; Pedagogy</span></h3>
+  </div>
+
+  <div class="questions">
+
+    <!-- Q17 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">17</div>
+        <div class="q-body">
+          <div class="q-text">A teacher helps a student master a complex scientific task by providing subtle, targeted prompts, which are slowly removed as the student gains confidence. This interactive learning aid is known in Social Constructivism as:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Operational Conditioning</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Structural Scaffolding</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Discovery Learning</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Cognitive Disequilibrium</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">18</div>
+        <div class="q-body">
+          <div class="q-text">According to Jean Piaget’s Cognitive Development theory, what key cognitive benchmark is a student demonstrating when they can solve abstract algebraic variables and design systematic scientific hypotheses?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Centration (Preoperational Stage)</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Conservation (Concrete Operational Stage)</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Object Permanence (Sensorimotor Stage)</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Hypothetical-Deductive Reasoning (Formal Operational Stage)</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">19</div>
+        <div class="q-body">
+          <div class="q-text">A primary school teacher notices that a 7-year-old student works diligently on spelling tasks because they take immense pride in receiving positive gold stars from the teacher. According to Erik Erikson, this student is successfully navigating which psychosocial crisis?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Trust vs. Mistrust</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Autonomy vs. Shame and Doubt</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Industry vs. Inferiority</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Identity vs. Role Confusion</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">20</div>
+        <div class="q-body">
+          <div class="q-text">When a teacher designs a learning objective that requires students to "critique, justify, or defend a specific environmental policy based on scientific data," which level of the Revised Bloom's Taxonomy is being assessed?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Understanding</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Applying</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Analyzing</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Evaluating</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q21 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">21</div>
+        <div class="q-body">
+          <div class="q-text">According to Abraham Maslow’s Hierarchy of Needs, why must a school prioritize a warm, secure, and physically safe classroom environment before expecting high academic achievement?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Because safety needs are growth needs that drive higher cognitive curiosity directly.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Because safety needs are foundational deficiency needs that must be satisfied before higher cognitive and self-actualization needs can motivate behavior.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Because classroom rules cannot be legally enforced without physical safety structures.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Because extrinsic behavioral motivation depends strictly on physical security rewards.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q22 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">22</div>
+        <div class="q-body">
+          <div class="q-text">During a biology lab, a teacher manages to help one student light a Bunsen burner, redirects two off-task students at the back with a firm gesture, and keeps the rest of the class focused on their task. According to Jacob Kounin, this displays:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Withitness</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Overlappingness</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Momentum</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Smoothness</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q23 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">23</div>
+        <div class="q-body">
+          <div class="q-text">To maximize collaborative dialogue during cooperative group tasks, which desk arrangement should a teacher implement?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Standard rows facing the main board</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Modular desk clusters (seating pods)</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Perimeter desks facing the classroom walls</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Stadium-style amphitheater seating</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q24 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">24</div>
+        <div class="q-body">
+          <div class="q-text">A student persistently shouts out answers without raising their hand. Using the Canter Model of Assertive Discipline, how should the teacher respond?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Shout at the student immediately to enforce order.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Ignore the student completely and hope they stop.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">State the rule and apply the pre-established consequence calmly, firmly, and consistently.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Keep the student out of the class for the rest of the day.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q25 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">25</div>
+        <div class="q-body">
+          <div class="q-text">A teacher designs a final math exam to determine whether candidates meet the predefined, baseline state competency standards required to pass the grade. This type of test is classified as a:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Norm-Referenced Test</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Criterion-Referenced Test</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Diagnostic Test</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Formative Test</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q26 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">26</div>
+        <div class="q-body">
+          <div class="q-text">In an item analysis of a test question, the upper 27% of the class got the item wrong, while the lower 27% got it correct. This indicates that the item has:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">A positive discrimination index</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">A discrimination index of 0.00</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">A negative discrimination index</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">A perfect difficulty index</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q27 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">27</div>
+        <div class="q-body">
+          <div class="q-text">An educational curriculum is designed to reintroduce core scientific concepts across multiple grade levels, with each level increasing in depth, complexity, and abstraction. This model is known as:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">The Core Curriculum</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">The Spiral Curriculum</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">The Hidden Curriculum</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">The Activity-Based Curriculum</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q28 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">28</div>
+        <div class="q-body">
+          <div class="q-text">A school's formal curriculum lists the academic subjects to be taught, but students also learn gender roles, social compliance, and competition from daily school interactions. This informal learning is called:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">The Null Curriculum</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">The Hidden Curriculum</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">The Extracurricular Program</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">The Expository Curriculum</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q29 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">29</div>
+        <div class="q-body">
+          <div class="q-text">A teacher is approached by a parent asking for the individual test scores of other students in the class. According to professional ethical standards, the teacher must:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Share the scores to build community trust.</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Refuse to share the scores to protect student confidentiality.</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Sell the grades as part of school fundraising.</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Post all student grades publicly on the classroom door.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q30 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">30</div>
+        <div class="q-body">
+          <div class="q-text">To support a student with a diagnosed learning disability, a teacher collaborates with a special educator to design a document outlining specific learning goals, custom accommodations, and modified testing schedules. This document is an:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Individualized Education Program (IEP)</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Standardized Lesson Blueprint</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Anecdotal Behavior Portfolio</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Diagnostic Rubric Scheme</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q31 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">31</div>
+        <div class="q-body">
+          <div class="q-text">A school headmaster focuses on inspiring teachers, encouraging professional risk-taking, and transforming the school's cultural vision through collaboration. This leadership style is:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Transactional Leadership</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Laissez-faire Leadership</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Transformational Leadership</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Autocratic Leadership</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q32 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">32</div>
+        <div class="q-body">
+          <div class="q-text">A teacher introduces a physics unit by presenting an open-ended problem and guiding students to run experiments and discover the laws of motion themselves. This matches:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Direct Expository Instruction (Ausubel)</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Discovery Learning (Bruner)</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Operant Conditioning (Skinner)</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Rote Drill Practice (Thorndike)</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q33 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">33</div>
+        <div class="q-body">
+          <div class="q-text">A teacher organizes a cooperative activity where each member of a small group is assigned a unique segment of a reading passage, must master it, teach it to their group, and take a quiz. This structure is called:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Expository Lectureing</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">The Jigsaw Method</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Socratic Dialogue</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Rotational Peer Grading</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q34 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">34</div>
+        <div class="q-body">
+          <div class="q-text">To help students monitor their own comprehension during reading, a teacher instructs them to stop periodically and ask themselves, "Does this paragraph make sense, and how does it connect to the title?" This strategy builds:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Extrinsic Motivation</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Metacognition</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Classical Conditioning</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Sensory Register</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q35 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">35</div>
+        <div class="q-body">
+          <div class="q-text">A teacher designs a lesson plan that offers multiple means of representation (videos, text, audio), multiple means of action/expression, and multiple means of student engagement. This framework is:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Universal Design for Learning (UDL)</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Expository Direct Instruction</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Standard Behavioral Conditioning</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Individualized Diagnostic Testing</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q36 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">36</div>
+        <div class="q-body">
+          <div class="q-text">On a standardized high-stakes exam, a teacher notices that the distribution of class scores forms a perfect, symmetrical bell curve. What does the exact center of this normal distribution curve represent?</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">The standard deviation value</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">The margin of error</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">The mean, median, and mode of the scores</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">The range of the performance metrics</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q37 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">37</div>
+        <div class="q-body">
+          <div class="q-text">A teacher notices that when they praise students immediately after they submit clean, neat lab reports, the neatness of subsequent reports increases. This reflects Edward Thorndike's:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Law of Readiness</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Law of Exercise</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Law of Effect</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Law of Recency</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q38 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">38</div>
+        <div class="q-body">
+          <div class="q-text">An elementary school teacher designs activities like cutting paper with scissors, threading beads, and tracing letters to help young learners develop:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Gross Motor Skills</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Fine Motor Skills</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Abstract Operational Reasoning</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Metacognitive Schemas</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q39 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">39</div>
+        <div class="q-body">
+          <div class="q-text">To evaluate the exact patterns of verbal communication and interaction between the teacher and students in a classroom, researchers use:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">Dave's Psychomotor Taxonomy</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">Flander's Interaction Analysis Category System (FIACS)</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">Krathwohl's Affective Rubric</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">Maslow's Deficiency Index</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q40 -->
+    <div class="q">
+      <div class="q-row">
+        <div class="q-num">40</div>
+        <div class="q-body">
+          <div class="q-text">At the end of a challenging history lesson, a teacher asks students to write down one key concept they learned and one remaining question on an index card and turn it in as they leave. This is an example of:</div>
+          <div class="opts single-col">
+            <div class="opt"><div class="opt-letter">A</div><div class="opt-text">A Summative Final Exam</div></div>
+            <div class="opt"><div class="opt-letter">B</div><div class="opt-text">An Exit Ticket (Formative Assessment)</div></div>
+            <div class="opt"><div class="opt-letter">C</div><div class="opt-text">A Placement Diagnostic Tool</div></div>
+            <div class="opt"><div class="opt-letter">D</div><div class="opt-text">A Norm-Referenced Test</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /questions -->
+
+  <!-- FOOTER -->
+  <div class="ft">
+    <span><strong>© Indus Testing Services</strong> — Official Assessment Material</span>
+    <div class="ft-center">
+      <div class="ft-dot"></div>
+      Quality Assurance in Education
+      <div class="ft-dot"></div>
+    </div>
+    <span>Unauthorized reproduction strictly prohibited</span>
+  </div>
+
+</div>
+</body>
+</html>
